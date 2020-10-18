@@ -1,0 +1,43 @@
+
+/* ==================================================================
+    KATEX
+================================================================== */
+
+body { counter-reset: eqnum; }
+
+.katex { font-size: 1em !important; }
+
+.katex-display .katex {
+    display: inline-block; } /* overwrite katex settings */
+
+.katex-display::after {
+    counter-increment: eqnum;
+    content: "(" counter(eqnum) ")";
+    position: relative;
+    float: right;
+    padding-right: 5px; }
+
+/* ==================================================================
+    CODE & HIGHLIGHT.JS for meta (shell>, pkg>, ...)
+================================================================== */
+
+.hljs-meta, .hljs-metas, .hljs-metap { font-weight: bold; }
+.hljs-meta { color: rgb(25, 179, 51); }
+.hljs-metas { color: red; }
+.hljs-metap { color: rgb(51, 131, 231); }
+
+/* ==================================================================
+    Other stuff
+================================================================== */
+
+.small-img img {
+    width: 70%;
+}
+
+.small-ctr {
+    width: 100%;
+    text-align: center;
+}
+.small-ctr .js-plotly-plot {
+    margin: auto;
+}

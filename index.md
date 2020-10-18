@@ -3,8 +3,8 @@
 ~~~
 
    <!-- SECTION -->
- 
- 
+
+
    <section id=about class="home-section wg-about">
      <div class=container>
        <div class=row>
@@ -74,9 +74,9 @@
        </div>
      </div>
    </section>
- 
+
    <!-- SECTION -->
- 
+
    <section id=skills class="home-section wg-featurette">
      <div class=container>
        <div class="row featurette">
@@ -101,9 +101,9 @@
        </div>
      </div>
    </section>
- 
+
  <!-- SECTION -->
- 
+
  <section id=experience class="home-section wg-experience">
    <div class=container>
      <div class=row>
@@ -170,9 +170,9 @@
          </div>
        </div>
      </section>
- 
- 
- 
+
+
+
      <section id=accomplishments class="home-section wg-accomplishments">
        <div class=container>
          <div class=row>
@@ -202,9 +202,9 @@
                </div>
              </div>
            </section>
- 
- 
- 
+
+
+
            <section id=posts class="home-section wg-pages">
              <div class=container>
                <div class=row>
@@ -268,10 +268,10 @@
                            </div>
                          </div>
                        </section>
- 
- 
+
+
    <!-- SECTION -->
- 
+
    <section id=projects class="home-section wg-portfolio">
      <div class=container>
        <div class=row>
@@ -316,9 +316,9 @@
        </div>
      </div>
    </section>
-  
+
  <!--  SECTION  -->
- 
+
  <section id=talks class="home-section wg-pages">
    <div class=container>
      <div class=row>
@@ -348,10 +348,10 @@
          </div>
        </div>
      </section>
- 
- 
+
+
  <!-- SECTION -->
- 
+
  <section id=featured class="home-section wg-featured">
    <div class=container>
      <div class=row>
@@ -378,9 +378,9 @@
            </div>
          </div>
        </section>
- 
+
  <!--  SECTION  -->
- 
+
  <section id=publications class="home-section wg-pages">
    <div class=container>
      <div class=row>
@@ -450,96 +450,5 @@
                </div>
              </div>
            </section>
- 
- 
- <!-- FOOTER  -->
- 
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin=anonymous></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin=anonymous></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin=anonymous></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin=anonymous></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin=anonymous></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js" integrity="sha512-7t8APmYpzEsZP7CYoA7RfMPV9Bb+PJHa9x2WiUnDXZx3XHveuyWUtvNOexhkierl5flZ3tr92dP1mMS+SGlD+A==" crossorigin=anonymous></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/languages/r.min.js"></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/languages/latex.min.js"></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js" integrity="sha256-EErZamuLefUnbMBQbsEqu1USa+btR2oIlCpBJbyD4/g=" crossorigin=anonymous></script>
-     <script>const code_highlighting = true;</script>
-     <script>
-     const search_config = {
-       "indexURI": "/index.json",
-       "minLength": 1,
-       "threshold": 0.3
-     };
-     const i18n = {
-       "no_results": "No results found",
-       "placeholder": "Search...",
-       "results": "results found"
-     };
-     const content_type = {
-       'post': "Posts",
-       'project': "Projects",
-       'publication': "Publications",
-       'talk': "Talks",
-       'slides': "Slides"
-     };
-     </script>
- 
-     <script id=search-hit-fuse-template type=text/x-template>
-       <div class="search-hit" id="summary-{{key}}">
-         <div class="search-hit-content">
-           <div class="search-hit-name">
-             <a href="{{relpermalink}}">{{title}}</a>
-             <div class="article-metadata search-hit-type">{{type}}</div>
-             <p class="search-hit-description">{{snippet}}</p>
-           </div>
-         </div>
-       </div>
-     </script>
- 
- <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin=anonymous></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin=anonymous></script>
- <script>
- if (window.netlifyIdentity) {
-   window.netlifyIdentity.on("init", user => {
-     if (!user) {
-       window.netlifyIdentity.on("login", () => {
-         document.location.href = "/admin/";
-       });
-     }
-   });
- }
- </script>
- <script src="/libs/academic/academic.min.js"></script>
- 
- <!-- SITE FOOTER -->
- 
- <div class=container>
-   <footer class=site-footer>
-     <p class=powered-by></p>
-     <p class=powered-by>Published with
-       <a href="https://wowchemy.com" target=_blank rel=noopener>Wowchemy Website Builder</a>
-       <span class=float-right aria-hidden=true><a href="#" class=back-to-top><span class=button_icon><i class="fas fa-chevron-up fa-2x"></i></span></a>
-     </span>
-   </p>
- </footer>
- </div>
- 
- 
- 
- <div id=modal class="modal fade" role=dialog>
-   <div class=modal-dialog>
-     <div class=modal-content>
-       <div class=modal-header>
-         <h5 class=modal-title>Cite</h5><button type=button class=close data-dismiss=modal aria-label=Close>
-           <span aria-hidden=true>&#215;</span></button></div>
-           <div class=modal-body>
-             <pre><code class="tex hljs"></code></pre>
-           </div>
-           <div class=modal-footer><a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target=_blank><i class="fas fa-copy"></i>Copy</a>
-             <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target=_blank><i class="fas fa-download"></i>Download</a>
-             <div id=modal-error></div>
-           </div>
-         </div>
-       </div>
-     </div>
+
  ~~~
