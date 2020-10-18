@@ -1,0 +1,218 @@
+<!--
+TOCHECK: search
+ -->
+
+ <!doctype html>
+ <html lang="en">
+ <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   <meta name="author" content="Septimia Zenobia">
+   <meta name="description" content="Head of Research">
+
+   <meta name="theme-color" content="#2962ff">
+
+   <!-- STYLESHEETS -->
+   <link rel=preconnect href="https://fonts.gstatic.com" crossorigin>
+   <link rel=stylesheet href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin=anonymous>
+   <link rel=stylesheet href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin=anonymous>
+   <link rel=stylesheet href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin=anonymous>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin=anonymous async></script>
+   <link rel=stylesheet href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+   <!-- locally served -->
+   <link rel=stylesheet href="/ft-academic-resume/libs/academic/academic.min.css">
+
+   <!-- <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script> -->
+
+   <!-- highlight + katex + plotly -->
+   <link rel=stylesheet href="/ft-academic-resume/libs/highlight/github.min.css">
+   <link rel="stylesheet" href="/ft-academic-resume/libs/katex/katex.min.css">
+
+    <script src="/ft-academic-resume/libs/plotly/plotly.min.js"></script> 
+   
+     <script src="/ft-academic-resume/libs/mermaid/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+   
+
+   <link rel=icon type=image/png href="/ft-academic-resume/assets/favicon.png">
+   <link rel=stylesheet href="/ft-academic-resume/css/extra.css">
+
+    <title>Writing Technical Content</title>  
+ </head>
+
+ <body id=top data-spy="scroll" data-offset="70" data-target=#navbar-main>
+
+   <!-- DARK MODE TOGGLE -->
+   <script>window.staDarkLightChooser = true;</script>
+   <script>const isSiteThemeDark = false;</script>
+   <script src="/ft-academic-resume/libs/academic/load-theme.js"></script>
+
+   <!-- NAV BAR -->
+
+   <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id=navbar-main>
+     <div class=container>
+       <div class="d-none d-lg-inline-flex">
+         <a class=navbar-brand href="/ft-academic-resume/">Academic</a>
+       </div>
+       <button type=button class=navbar-toggler data-toggle=collapse data-target=#navbar-content aria-controls=navbar aria-expanded=false aria-label="Toggle navigation">
+         <span><i class="fas fa-bars"></i></span>
+       </button>
+       <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+         <a class=navbar-brand href="/ft-academic-resume/">Academic</a>
+       </div>
+       <div class="navbar-collapse main-menu-item collapse justify-content-start" id=navbar-content>
+         <ul class="navbar-nav d-md-inline-flex">
+           <li class=nav-item><a class=nav-link href="/ft-academic-resume/#posts" data-target=#posts><span>Posts</span></a></li>
+           <li class=nav-item><a class=nav-link href="/ft-academic-resume/#projects" data-target=#projects><span>Projects</span></a></li>
+           <li class=nav-item><a class=nav-link href="/ft-academic-resume/#featured" data-target=#featured><span>Publications</span></a></li>
+           <li class=nav-item><a class=nav-link href="/ft-academic-resume/courses/"><span>Courses</span></a>
+           </li>
+         </ul>
+       </div>
+     </div>
+   </nav>
+
+   <span class="js-widget-page d-none"></span>
+<div class="franklin-content">
+
+
+<article class=article>
+
+  <div class="article-container pt-3">
+    <h1>Writing technical content in Academic</h1>
+    <div class="article-metadata">
+      <span class="article-date">Last updated on Aug 26, 2020</span> <span class="middot-divider"></span><span class="article-reading-time">5 min read</span>
+    </div>
+  </div>
+
+  <div class="article-header container-fluid featured-image-wrapper mt-4 mb-4" style="max-width:2000px;max-height:1333px">
+    <div style="position:relative">
+      <img src="/ft-academic-resume/assets/post/writing-technical-content/hero.jpg" alt="" class="featured-image">
+      <span class="article-header-caption">Image credit: <a href="https://unsplash.com/photos/OGZtQF8iC0g"><strong>John Moeses Bauan</strong></a></span>
+    </div>
+  </div>
+  <div class="article-container">
+    <div class="article-style">
+
+<p>Academic is designed to give technical content creators a seamless experience. You can focus on the content and Academic handles the rest.</p>
+<p><strong>Highlight your code snippets, take notes on math classes, and draw diagrams from textual representation.</strong></p>
+<p>On this page, you’ll find some examples of the types of technical content that can be rendered with Academic.</p>
+<h2 id="examples"><a href="#examples">Examples</a></h2>
+<h3 id="code"><a href="#code">Code</a></h3>
+<p>Franklin supports highlighting code natively, for instance here&#39;s a python-code block:</p>
+<pre><code class="language-python">import pandas as pd
+data &#61; pd.read_csv&#40;&quot;data.csv&quot;&#41;
+data.head&#40;&#41;</code></pre>
+<p>You can read more on code block highlighting and executing <a href="https://franklinjl.org/code/">in the docs</a>.</p>
+<h3 id="charts"><a href="#charts">Charts</a></h3>
+<p>You can execute Julia code and show the output, for instance you could use <code>PyPlot</code> or <code>Plotly</code> and show the output.</p>
+<pre><code class="language-julia">import PyPlot
+x &#61; rand&#40;10&#41;
+y &#61; rand&#40;10&#41;
+PyPlot.figure&#40;figsize&#61;&#40;8, 6&#41;&#41;
+PyPlot.plot&#40;x, y, marker&#61;&quot;o&quot;, markersize&#61;7&#41;
+PyPlot.xticks&#40;&#91;&#93;&#41;
+PyPlot.yticks&#40;&#91;&#93;&#41;</code></pre>
+<div class="small-img"><img src="/ft-academic-resume/assets/post/writing-technical-content/code/output/ex-pyplot.svg" alt="A random plot"></div>
+<pre><code class="language-julia">import PlotlyJS
+z &#61;  &#91;10     10.625  12.5  15.625  20
+     5.625  6.25    8.125 11.25   15.625
+     2.5    3.125   5.    8.125   12.5
+     0.625  1.25    3.125 6.25    10.625
+     0      0.625   2.5   5.625   10&#93;
+
+data   &#61; PlotlyJS.contour&#40;; z&#61;z&#41;
+layout &#61; PlotlyJS.Layout&#40;&#41;
+plot   &#61; PlotlyJS.plot&#40;data, layout&#41;
+jplot  &#61; PlotlyJS.json&#40;plot&#41;</code></pre>
+<div class="small-ctr"><div id="fdppqn" style="width:600px;height:350px"></div>
+
+<script>
+	var fig = {"layout":{"margin":{"l":50,"b":50,"r":50,"t":60}},"frames":[],"data":[{"type":"contour","z":[[10.0,5.625,2.5,0.625,0.0],[10.625,6.25,3.125,1.25,0.625],[12.5,8.125,5.0,3.125,2.5],[15.625,11.25,8.125,6.25,5.625],[20.0,15.625,12.5,10.625,10.0]]}]};
+	CONTAINER = document.getElementById('fdppqn');
+	Plotly.newPlot(CONTAINER, fig.data, fig.layout)
+</script></div>
+<h3 id="math"><a href="#math">Math</a></h3>
+<p>Franklin supports LaTeX-like maths, to render <em>inline</em> or <em>block</em> math, wrap your math with <code>&#36;...&#36;</code> or <code>&#36;&#36;...&#36;&#36;</code> respectively. You can also use basic <code>\begin&#123;equation&#125;...\end&#123;equation&#125;</code>, with <code>align</code>, <code>eqnarray</code> etc.</p>
+<p>Example <strong>math block</strong>:</p>
+<pre><code class="language-plaintext">&#36;&#36;\gamma_&#123;n&#125; &#61; \frac&#123;
+\left | \left &#40;\mathbf x_&#123;n&#125; - \mathbf x_&#123;n-1&#125; \right &#41;^T
+\left &#91;\nabla F &#40;\mathbf x_&#123;n&#125;&#41; - \nabla F &#40;\mathbf x_&#123;n-1&#125;&#41; \right &#93; \right |&#125;
+&#123;\left \|\nabla F&#40;\mathbf&#123;x&#125;_&#123;n&#125;&#41; - \nabla F&#40;\mathbf&#123;x&#125;_&#123;n-1&#125;&#41; \right \|^2&#125;&#36;&#36;</code></pre>
+<p>renders as</p>
+\[\gamma_{n} = \frac{
+\left | \left (\mathbf x_{n} - \mathbf x_{n-1} \right )^T
+\left [\nabla F (\mathbf x_{n}) - \nabla F (\mathbf x_{n-1}) \right ] \right |}
+{\left \|\nabla F(\mathbf{x}_{n}) - \nabla F(\mathbf{x}_{n-1}) \right \|^2}\]
+<p>Example <strong>inline math</strong> <code>&#36;\nabla F&#40;\mathbf&#123;x&#125;_&#123;n&#125;&#41;&#36;</code> renders as \(\nabla F(\mathbf{x}_{n})\).</p>
+<p>Example <strong>multi-line math</strong> using the <code>\\</code> linebreak</p>
+\[f(k;p_0^*) = \begin{cases} p_0^* & \text{if }k=1, \\
+1-p_0^* & \text {if }k=0.\end{cases}\]
+<h3 id="diagrams"><a href="#diagrams">Diagrams</a></h3>
+<p>If you want <a href="https://mermaid-js.github.io/mermaid/#/"><code>mermaid</code></a> diagrams, no problem. Just stick your code between a <code>\begin&#123;mermaid&#125;&#123;&#125;</code> and <code>\end&#123;mermaid&#125;</code>, see how that works in the <code>utils.jl</code>:</p>
+<div class="mermaid">graph TD
+A[Client] -->|tcp_123| B(Load Balancer)
+B -->|tcp_456| C[Server1]
+B -->|tcp_456| D[Server2]</div>
+<p>here&#39;s a state diagram</p>
+<div class="mermaid">stateDiagram
+[*] --> Still
+Still --> [*]
+Still --> Moving
+Moving --> Still
+Moving --> Crash
+Crash --> [*]</div>
+<h3 id="other_markdown_tricks"><a href="#other_markdown_tricks">Other Markdown tricks</a></h3>
+<p><strong>Tables</strong>:</p>
+<table><tr><th align="right">First Header</th><th align="right">Second Header</th></tr><tr><td align="right">Content Cell</td><td align="right">Content Cell</td></tr><tr><td align="right">Content Cell</td><td align="right">Content Cell with more content</td></tr></table>
+<p><strong>Callouts</strong> via <code>\callout&#123;...&#125;</code> &#40;see the definition in <code>config.md</code>&#41;:</p>
+<div class="alert alert-note"><div> A Markdown aside is useful for displaying notices, hints, or definitions to your readers.</div></div>
+<p><strong>Icons</strong>, you can use emoji in Franklin 🚚 and also icons via FontAwesome using <code>\icon&#123;name&#125;</code>:</p>
+<p><i class="fas fa-terminal"></i> with <code>\icon&#123;terminal&#125;</code> <br/> <i class="fas fa-mouse"></i> with <code>\icon&#123;mouse&#125;</code></p>
+<p>etc.</p>
+
+    </div> <!-- article style -->
+
+<div class="share-box" aria-hidden="true"><ul class="share"><li><a href="https://twitter.com/intent/tweet?url=https://academic-demo.netlify.app/post/writing-technical-content/&amp;text=Writing%20technical%20content%20in%20Academic" target="_blank" rel="noopener" class="share-btn-twitter"><i class="fab fa-twitter"></i></a></li><li><a href="https://www.facebook.com/sharer.php?u=https://academic-demo.netlify.app/post/writing-technical-content/&amp;t=Writing%20technical%20content%20in%20Academic" target="_blank" rel="noopener" class="share-btn-facebook"><i class="fab fa-facebook"></i></a></li><li><a href="mailto:?subject=Writing%20technical%20content%20in%20Academic&amp;body=https://academic-demo.netlify.app/post/writing-technical-content/" target="_blank" rel="noopener" class="share-btn-email"><i class="fas fa-envelope"></i></a></li><li><a href="https://www.linkedin.com/shareArticle?url=https://academic-demo.netlify.app/post/writing-technical-content/&amp;title=Writing%20technical%20content%20in%20Academic" target="_blank" rel="noopener" class="share-btn-linkedin"><i class="fab fa-linkedin-in"></i></a></li><li><a href="whatsapp://send?text=Writing%20technical%20content%20in%20Academic%20https://academic-demo.netlify.app/post/writing-technical-content/" target="_blank" rel="noopener" class="share-btn-whatsapp"><i class="fab fa-whatsapp"></i></a></li><li><a href="https://service.weibo.com/share/share.php?url=https://academic-demo.netlify.app/post/writing-technical-content/&amp;title=Writing%20technical%20content%20in%20Academic" target="_blank" rel="noopener" class="share-btn-weibo"><i class="fab fa-weibo"></i></a></li></ul></div>
+
+<div class="media author-card content-widget-hr"><img class="avatar mr-3 avatar-circle" src="/ft-academic-resume/assets/img/person.jpg" alt="Nelson Bighetti"><div class="media-body"><h5 class="card-title"><a href="https://academic-demo.netlify.app">Nelson Bighetti</a></h5><h6 class="card-subtitle">Professor of Artificial Intelligence</h6><p class="card-text">My research interests include distributed robotics, mobile computing and programmable matter.</p><ul class="network-icon" aria-hidden="true"><li><a href="/ft-academic-resume/#contact"><i class="fas fa-envelope"></i></a></li><li><a href="https://twitter.com/GeorgeCushen" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a></li><li><a href="https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ" target="_blank" rel="noopener"><i class="fas fa-graduation-cap"></i></a></li><li><a href="https://github.com/gcushen" target="_blank" rel="noopener"><i class="fab fa-github"></i></a></li><li><a href="https://www.linkedin.com/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a></li></ul></div></div>
+
+  </div> <!--article container -->
+</article>
+
+<div class="container">
+  <footer class="site-footer">
+    <p class="powered-by">Published with <a href="https://franklinjl.org" target="_blank" rel="noopener">Franklin.jl</a>
+
+      <span class="float-right" aria-hidden="true">
+        <a href="#" class="back-to-top">
+          <span class="button_icon">
+            <i class="fas fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+    </p>
+  </footer>
+</div>
+</div><!-- CONTENT ENDS HERE -->
+     <script src="/ft-academic-resume/libs/katex/katex.min.js"></script>
+<script src="/ft-academic-resume/libs/katex/auto-render.min.js"></script>
+<script>renderMathInElement(document.body)</script>
+     
+     <script src="/ft-academic-resume/libs/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();hljs.configure({tabReplace: '    '});</script>
+ 
+
+  <script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin=anonymous></script>
+
+  <script src=https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin=anonymous></script>
+
+  <script src=https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin=anonymous></script>
+
+  <script src=https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin=anonymous></script>
+
+  <script src="/ft-academic-resume/libs/academic/academic.min.js"></script>
+
+  </body>
+</html>
