@@ -1,79 +1,45 @@
 @def title = "Academic template"
 
+\begin{section}{name="about", class="wg-about"}
+
+@@col-12,col-lg-4,profile
+
+\img{"/assets/img/person.jpg", class="avatar avatar-circle", alt="Nelson Bighetti"}
+\portrait{
+  name="Nelson Bighetti",
+  job="Professor of Artificial Intelligence",
+  link="https://www.stanford.edu/",
+  linkname="Stanford University",
+  twitter="https://twitter.com/GeorgeCushen",
+  gscholar="https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ",
+  github="https://github.com/gcushen",
+  linkedin="https://www.linkedin.com/"
+}
+
+@@ <!-- end of left-column -->
+
+@@col-12,col-lg-8
+
+\begin{biography}{resume="/assets/demo_resume.pdf"}
+  Nelson Bighetti is a professor of artificial intelligence at the Stanford AI Lab. His research interests include distributed robotics, mobile computing and programmable matter. He leads the Robotic Neurobiology group, which develops
+  self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
+
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.
+\end{biography}
+
+\shortcv{
+  interests=["Artificial Intelligence", "Computational Linguistics", "Information Retrieval"],
+  education=[
+    ("PhD in Artificial Intelligence, 2012", "Stanford University"),
+    ("MEng in Artificial Intelligence, 2009", "Massachusetts Institute of Technology"),
+    ("BSc in Artificial Intelligence, 2008", "Massachusetts Institute of Technology")]
+}
+
+@@ <!-- end of right-column -->
+
+\end{section}
+
 ~~~
-
-   <!-- SECTION -->
-
-
-   <section id=about class="home-section wg-about">
-     <div class=container>
-       <div class=row>
-         <div class="col-12 col-lg-4">
-           <div id=profile>
-             <img class="avatar avatar-circle" src="/assets/img/person.jpg" alt="Nelson Bighetti">
-             <div class=portrait-title>
-               <h2>Nelson Bighetti</h2>
-               <h3>Professor of Artificial Intelligence</h3>
-               <h3><a href="https://www.stanford.edu/" target=_blank rel=noopener><span>Stanford University</span></a></h3>
-             </div>
-             <ul class=network-icon aria-hidden=true>
-               <!-- <li><a href="/#contact"><i class="fas fa-envelope big-icon"></i></a></li> -->
-               <li><a href="https://twitter.com/GeorgeCushen" target=_blank rel=noopener><i class="fab fa-twitter big-icon"></i></a></li>
-               <li><a href="https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ" target=_blank rel=noopener><i class="fas fa-graduation-cap big-icon"></i></a></li>
-               <li><a href="https://github.com/gcushen" target=_blank rel=noopener><i class="fab fa-github big-icon"></i></a></li>
-               <li><a href="https://www.linkedin.com/" target=_blank rel=noopener><i class="fab fa-linkedin big-icon"></i></a></li>
-             </ul>
-           </div>
-         </div>
-         <div class="col-12 col-lg-8">
-           <h1>Biography</h1>
-           <p>
-             Nelson Bighetti is a professor of artificial intelligence at the Stanford AI Lab. His research interests include distributed robotics, mobile computing and programmable matter. He leads the Robotic Neurobiology group, which develops
-             self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
-           </p>
-           <p>
-             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.
-           </p>
-           <p>
-             <i class="fas fa-download pr-1 fa-fw"></i>Download my <a href="/assets/demo_resume.pdf" target=_blank>resumé</a>.
-           </p>
-           <div class=row>
-             <div class=col-md-5>
-               <h3>Interests</h3>
-               <ul class=ul-interests>
-                 <li>Artificial Intelligence</li>
-                 <li>Computational Linguistics</li>
-                 <li>Information Retrieval</li>
-               </ul>
-             </div>
-             <div class=col-md-7>
-               <h3>Education</h3>
-               <ul class="ul-edu fa-ul">
-                 <li><i class="fa-li fas fa-graduation-cap"></i>
-                   <div class=description>
-                     <p class=course>PhD in Artificial Intelligence, 2012</p>
-                     <p class=institution>Stanford University</p>
-                   </div>
-                 </li>
-                 <li><i class="fa-li fas fa-graduation-cap"></i>
-                   <div class=description>
-                     <p class=course>MEng in Artificial Intelligence, 2009</p>
-                     <p class=institution>Massachusetts Institute of Technology</p>
-                   </div>
-                 </li>
-                 <li><i class="fa-li fas fa-graduation-cap"></i>
-                   <div class=description>
-                     <p class=course>BSc in Artificial Intelligence, 2008</p>
-                     <p class=institution>Massachusetts Institute of Technology</p>
-                   </div>
-                 </li>
-               </ul>
-             </div>
-           </div>
-         </div>
-       </div>
-     </div>
-   </section>
 
    <!-- SECTION -->
 
@@ -214,9 +180,9 @@
                  <div class="col-12 col-lg-8">
                    <div class="media stream-item">
                      <div class=media-body>
-                       <h3 class="article-title mb-0 mt-0"><a href="/post/writing-technical-content/">Writing technical content in Academic</a>
+                       <h3 class="article-title mb-0 mt-0"><a href="/posts/writing-technical-content/">Writing technical content in Academic</a>
                        </h3>
-                       <a href="/post/writing-technical-content/" class=summary-link>
+                       <a href="/posts/writing-technical-content/" class=summary-link>
                          <div class=article-style>Academic is designed to give technical content creators a seamless experience. You can focus on the content and Academic handles the rest. Highlight your code snippets, take notes on math classes, and draw diagrams from
                            textual representation.</div>
                          </a>
@@ -226,14 +192,14 @@
                              <span class=middot-divider></span><span class=article-reading-time>5 min read</span></div>
                            </div>
                          </div>
-                         <div class=ml-3><a href="/post/writing-technical-content/"><img src="/assets/img/post1.jpg" alt="Writing technical content in Academic"></a>
+                         <div class=ml-3><a href="/posts/writing-technical-content/"><img src="/assets/img/post1.jpg" alt="Writing technical content in Academic"></a>
                          </div>
                        </div>
                        <div class="media stream-item">
                          <div class=media-body>
-                           <h3 class="article-title mb-0 mt-0"><a href="/post/jupyter/">Display Jupyter Notebooks with Academic</a>
+                           <h3 class="article-title mb-0 mt-0"><a href="/posts/jupyter/">Display Jupyter Notebooks with Academic</a>
                            </h3>
-                           <a href="/post/jupyter/" class=summary-link>
+                           <a href="/posts/jupyter/" class=summary-link>
                              <div class=article-style>Learn how to blog in Academic using Jupyter notebooks</div>
                            </a>
                            <div class="stream-meta article-metadata">
@@ -243,14 +209,14 @@
                                  <span class=middot-divider></span><span class=article-reading-time>2 min read</span></div>
                                </div>
                              </div>
-                             <div class=ml-3><a href="/post/jupyter/"><img src="/assets/img/post2.png" alt="Display Jupyter Notebooks with Academic"></a>
+                             <div class=ml-3><a href="/posts/jupyter/"><img src="/assets/img/post2.png" alt="Display Jupyter Notebooks with Academic"></a>
                              </div>
                            </div>
                            <div class="media stream-item">
                              <div class=media-body>
-                               <h3 class="article-title mb-0 mt-0"><a href="/post/getting-started/">Academic: the website builder for Hugo</a>
+                               <h3 class="article-title mb-0 mt-0"><a href="/posts/getting-started/">Academic: the website builder for Hugo</a>
                                </h3>
-                               <a href="/post/getting-started/" class=summary-link>
+                               <a href="/posts/getting-started/" class=summary-link>
                                  <div class=article-style>Create a beautifully simple website in under 10 minutes.</div>
                                </a>
                                <div class="stream-meta article-metadata">
@@ -261,7 +227,7 @@
                                      <span class=middot-divider></span><span class=article-categories><i class="fas fa-folder mr-1"></i><a href="/category/demo/">Demo</a>, <a href="/category/%E6%95%99%E7%A8%8B/">教程</a></span></div>
                                    </div>
                                  </div>
-                                 <div class=ml-3><a href="/post/getting-started/"><img src="/assets/img/post3.jpg" alt="Academic: the website builder for Hugo"></a>
+                                 <div class=ml-3><a href="/posts/getting-started/"><img src="/assets/img/post3.jpg" alt="Academic: the website builder for Hugo"></a>
                                  </div>
                                </div>
                              </div>

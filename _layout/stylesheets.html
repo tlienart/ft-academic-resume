@@ -1,0 +1,41 @@
+<link
+  rel=preconnect
+  href="https://fonts.gstatic.com"
+  crossorigin=anonymous>
+
+<link
+  rel=stylesheet
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"  crossorigin=anonymous>
+
+<link
+  rel=stylesheet
+  href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css"
+  crossorigin=anonymous>
+
+<link
+  rel=stylesheet
+  href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css"
+  crossorigin=anonymous>
+
+<link
+  rel=stylesheet
+  href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap"
+  crossorigin=anonymous>
+
+<!-- locally served -->
+<link rel=stylesheet href="/libs/academic/academic.min.css">
+
+<link rel=stylesheet href="/css/extra.css">
+
+<!-- highlight + katex + plotly -->
+{{if hascode}}<link rel=stylesheet href="/libs/highlight/github.min.css">{{end}}
+{{if hasmath}}
+  {{insert head_katex.html}}
+{{end}}
+{{if hasplotly}}
+  <script src="/libs/plotly/plotly.min.js"></script>
+{{end}}
+{{if hasmermaid}}
+  <script src="/libs/mermaid/mermaid.min.js"></script>
+  <script>mermaid.initialize({startOnLoad:true});</script>
+{{end}}

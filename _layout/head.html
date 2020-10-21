@@ -1,75 +1,23 @@
-<!--
-TOCHECK: search
- -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
- <!doctype html>
- <html lang="en">
- <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="{{author}}">
+  <meta name="description" content="{{jobtitle}}">
 
-   <meta name="author" content="{{author}}">
-   <meta name="description" content="{{jobtitle}}">
+  <meta name="theme-color" content="#2962ff">
 
-   <meta name="theme-color" content="#2962ff">
+  {{insert stylesheets.html}}
 
-   <!-- STYLESHEETS -->
-   <link rel=preconnect href="https://fonts.gstatic.com" crossorigin>
-   <link rel=stylesheet href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin=anonymous>
-   <link rel=stylesheet href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin=anonymous>
-   <link rel=stylesheet href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin=anonymous>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin=anonymous async></script>
-   <link rel=stylesheet href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
-   <!-- locally served -->
-   <link rel=stylesheet href="/libs/academic/academic.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin=anonymous async></script>
 
-   <!-- <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script> -->
+  {{isdef title}} <title>{{fill title}}</title>  {{end}}
+</head>
 
-   <!-- highlight + katex + plotly -->
-   {{if hascode}}<link rel=stylesheet href="/libs/highlight/github.min.css">{{end}}
-   {{if hasmath}}{{insert head_katex.html}}{{end}}
-   {{if hasplotly}} <script src="/libs/plotly/plotly.min.js"></script> {{end}}
-   {{if hasmermaid}}
-     <script src="/libs/mermaid/mermaid.min.js"></script>
-    <script>mermaid.initialize({startOnLoad:true});</script>
-   {{end}}
+<body id=top data-spy="scroll" data-offset="70" data-target=#navbar-main>
 
-   <link rel=icon type=image/png href="/assets/favicon.png">
-   <link rel=stylesheet href="/css/extra.css">
-
-   {{isdef title}} <title>{{fill title}}</title>  {{end}}
- </head>
-
- <body id=top data-spy="scroll" data-offset="70" data-target=#navbar-main>
-
-   <!-- DARK MODE TOGGLE -->
-   <script>window.staDarkLightChooser = true;</script>
-   <script>const isSiteThemeDark = false;</script>
-   <script src="/libs/academic/load-theme.js"></script>
-
-   <!-- NAV BAR -->
-
-   <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id=navbar-main>
-     <div class=container>
-       <div class="d-none d-lg-inline-flex">
-         <a class=navbar-brand href="/">Academic</a>
-       </div>
-       <button type=button class=navbar-toggler data-toggle=collapse data-target=#navbar-content aria-controls=navbar aria-expanded=false aria-label="Toggle navigation">
-         <span><i class="fas fa-bars"></i></span>
-       </button>
-       <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
-         <a class=navbar-brand href="/">Academic</a>
-       </div>
-       <div class="navbar-collapse main-menu-item collapse justify-content-start" id=navbar-content>
-         <ul class="navbar-nav d-md-inline-flex">
-           <li class=nav-item><a class=nav-link href="/#posts" data-target=#posts><span>Posts</span></a></li>
-           <li class=nav-item><a class=nav-link href="/#projects" data-target=#projects><span>Projects</span></a></li>
-           <li class=nav-item><a class=nav-link href="/#featured" data-target=#featured><span>Publications</span></a></li>
-           <li class=nav-item><a class=nav-link href="/courses/"><span>Courses</span></a>
-           </li>
-         </ul>
-       </div>
-     </div>
-   </nav>
-
-   <span class="js-widget-page d-none"></span>
+  {{insert navbar.html}}
+  
+  <span class="js-widget-page d-none"></span>
