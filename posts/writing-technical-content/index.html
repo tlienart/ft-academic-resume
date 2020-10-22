@@ -1,79 +1,94 @@
-<!--
-TOCHECK: search
- -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
- <!doctype html>
- <html lang="en">
- <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Septimia Zenobia">
+  <meta name="description" content="Head of Research">
 
-   <meta name="author" content="Septimia Zenobia">
-   <meta name="description" content="Head of Research">
+  <meta name="theme-color" content="#2962ff">
 
-   <meta name="theme-color" content="#2962ff">
+  <link
+  rel=preconnect
+  href="https://fonts.gstatic.com"
+  crossorigin=anonymous>
 
-   <!-- STYLESHEETS -->
-   <link rel=preconnect href="https://fonts.gstatic.com" crossorigin>
-   <link rel=stylesheet href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin=anonymous>
-   <link rel=stylesheet href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin=anonymous>
-   <link rel=stylesheet href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin=anonymous>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin=anonymous async></script>
-   <link rel=stylesheet href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
-   <!-- locally served -->
-   <link rel=stylesheet href="/ft-academic-resume/libs/academic/academic.min.css">
+<link
+  rel=stylesheet
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"  crossorigin=anonymous>
 
-   <!-- <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script> -->
+<link
+  rel=stylesheet
+  href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css"
+  crossorigin=anonymous>
 
-   <!-- highlight + katex + plotly -->
-   <link rel=stylesheet href="/ft-academic-resume/libs/highlight/github.min.css">
-   <link rel="stylesheet" href="/ft-academic-resume/libs/katex/katex.min.css">
+<link
+  rel=stylesheet
+  href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css"
+  crossorigin=anonymous>
 
-    <script src="/ft-academic-resume/libs/plotly/plotly.min.js"></script> 
-   
-     <script src="/ft-academic-resume/libs/mermaid/mermaid.min.js"></script>
-    <script>mermaid.initialize({startOnLoad:true});</script>
-   
+<link
+  rel=stylesheet
+  href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap"
+  crossorigin=anonymous>
 
-   <link rel=icon type=image/png href="/ft-academic-resume/assets/favicon.png">
-   <link rel=stylesheet href="/ft-academic-resume/css/extra.css">
+<!-- locally served -->
+<link rel=stylesheet href="/ft-academic-resume/libs/academic/academic.min.css">
 
-    <title>Writing Technical Content</title>  
- </head>
+<link rel=stylesheet href="/ft-academic-resume/css/extra.css">
 
- <body id=top data-spy="scroll" data-offset="70" data-target=#navbar-main>
+<!-- highlight + katex + plotly -->
+<link rel=stylesheet href="/ft-academic-resume/libs/highlight/github.min.css">
 
-   <!-- DARK MODE TOGGLE -->
-   <script>window.staDarkLightChooser = true;</script>
-   <script>const isSiteThemeDark = false;</script>
-   <script src="/ft-academic-resume/libs/academic/load-theme.js"></script>
+  <link rel="stylesheet" href="/ft-academic-resume/libs/katex/katex.min.css">
 
-   <!-- NAV BAR -->
 
-   <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id=navbar-main>
-     <div class=container>
-       <div class="d-none d-lg-inline-flex">
-         <a class=navbar-brand href="/ft-academic-resume/">Academic</a>
-       </div>
-       <button type=button class=navbar-toggler data-toggle=collapse data-target=#navbar-content aria-controls=navbar aria-expanded=false aria-label="Toggle navigation">
-         <span><i class="fas fa-bars"></i></span>
-       </button>
-       <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
-         <a class=navbar-brand href="/ft-academic-resume/">Academic</a>
-       </div>
-       <div class="navbar-collapse main-menu-item collapse justify-content-start" id=navbar-content>
-         <ul class="navbar-nav d-md-inline-flex">
-           <li class=nav-item><a class=nav-link href="/ft-academic-resume/#posts" data-target=#posts><span>Posts</span></a></li>
-           <li class=nav-item><a class=nav-link href="/ft-academic-resume/#projects" data-target=#projects><span>Projects</span></a></li>
-           <li class=nav-item><a class=nav-link href="/ft-academic-resume/#featured" data-target=#featured><span>Publications</span></a></li>
-           <li class=nav-item><a class=nav-link href="/ft-academic-resume/courses/"><span>Courses</span></a>
-           </li>
-         </ul>
-       </div>
-     </div>
-   </nav>
 
-   <span class="js-widget-page d-none"></span>
+  <script src="/ft-academic-resume/libs/plotly/plotly.min.js"></script>
+
+
+  <script src="/ft-academic-resume/libs/mermaid/mermaid.min.js"></script>
+  <script>mermaid.initialize({startOnLoad:true});</script>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin=anonymous async></script>
+
+   <title>Writing Technical Content</title>  
+</head>
+
+<body id=top data-spy="scroll" data-offset="70" data-target=#navbar-main>
+
+  <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id=navbar-main>
+  <div class=container>
+    <!-- Main name -->
+    <div class="d-none d-lg-inline-flex">
+      <a class=navbar-brand href="/ft-academic-resume/">Academic</a>
+    </div>
+    <!-- Button for narrow mode -->
+    <button type=button class=navbar-toggler data-toggle=collapse data-target=#navbar-content aria-controls=navbar aria-expanded=false aria-label="Toggle navigation">
+      <span><i class="fas fa-bars"></i></span>
+    </button>
+    <!-- Main name for mobile mode -->
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class=navbar-brand href="/ft-academic-resume/">Academic</a>
+    </div>
+    <!-- Menu items -->
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id=navbar-content>
+      <ul class="navbar-nav d-md-inline-flex">
+        <li class=nav-item><a class=nav-link href="/ft-academic-resume/#posts" data-target=#posts><span>Recent posts</span></a></li>
+        <li class=nav-item><a class=nav-link href="/ft-academic-resume/#projects" data-target=#projects><span>Projects</span></a></li>
+        <li class=nav-item><a class=nav-link href="/ft-academic-resume/#featured" data-target=#featured><span>Publications</span></a></li>
+        <li class=nav-item><a class=nav-link href="/ft-academic-resume/posts/"><span>All Posts</span></a></li>
+        <li class=nav-item><a class=nav-link href="/ft-academic-resume/courses/"><span>Courses</span></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+  <span class="js-widget-page d-none"></span>
 <div class="franklin-content">
 
 
@@ -88,7 +103,7 @@ TOCHECK: search
 
   <div class="article-header container-fluid featured-image-wrapper mt-4 mb-4" style="max-width:2000px;max-height:1333px">
     <div style="position:relative">
-      <img src="/ft-academic-resume/assets/post/writing-technical-content/hero.jpg" alt="" class="featured-image">
+      <img src="/ft-academic-resume/assets/posts/writing-technical-content/hero.jpg" alt="" class="featured-image">
       <span class="article-header-caption">Image credit: <a href="https://unsplash.com/photos/OGZtQF8iC0g"><strong>John Moeses Bauan</strong></a></span>
     </div>
   </div>
@@ -114,7 +129,7 @@ PyPlot.figure&#40;figsize&#61;&#40;8, 6&#41;&#41;
 PyPlot.plot&#40;x, y, marker&#61;&quot;o&quot;, markersize&#61;7&#41;
 PyPlot.xticks&#40;&#91;&#93;&#41;
 PyPlot.yticks&#40;&#91;&#93;&#41;</code></pre>
-<div class="small-img"><img src="/ft-academic-resume/assets/post/writing-technical-content/code/output/ex-pyplot.svg" alt="A random plot"></div>
+<div class="small-img"><img src="/ft-academic-resume/assets/posts/writing-technical-content/code/output/ex-pyplot.svg" alt="A random plot"></div>
 <pre><code class="language-julia">import PlotlyJS
 z &#61;  &#91;10     10.625  12.5  15.625  20
      5.625  6.25    8.125 11.25   15.625
@@ -174,7 +189,7 @@ Crash --> [*]</div>
 
     </div> <!-- article style -->
 
-<div class="share-box" aria-hidden="true"><ul class="share"><li><a href="https://twitter.com/intent/tweet?url=https://academic-demo.netlify.app/post/writing-technical-content/&amp;text=Writing%20technical%20content%20in%20Academic" target="_blank" rel="noopener" class="share-btn-twitter"><i class="fab fa-twitter"></i></a></li><li><a href="https://www.facebook.com/sharer.php?u=https://academic-demo.netlify.app/post/writing-technical-content/&amp;t=Writing%20technical%20content%20in%20Academic" target="_blank" rel="noopener" class="share-btn-facebook"><i class="fab fa-facebook"></i></a></li><li><a href="mailto:?subject=Writing%20technical%20content%20in%20Academic&amp;body=https://academic-demo.netlify.app/post/writing-technical-content/" target="_blank" rel="noopener" class="share-btn-email"><i class="fas fa-envelope"></i></a></li><li><a href="https://www.linkedin.com/shareArticle?url=https://academic-demo.netlify.app/post/writing-technical-content/&amp;title=Writing%20technical%20content%20in%20Academic" target="_blank" rel="noopener" class="share-btn-linkedin"><i class="fab fa-linkedin-in"></i></a></li><li><a href="whatsapp://send?text=Writing%20technical%20content%20in%20Academic%20https://academic-demo.netlify.app/post/writing-technical-content/" target="_blank" rel="noopener" class="share-btn-whatsapp"><i class="fab fa-whatsapp"></i></a></li><li><a href="https://service.weibo.com/share/share.php?url=https://academic-demo.netlify.app/post/writing-technical-content/&amp;title=Writing%20technical%20content%20in%20Academic" target="_blank" rel="noopener" class="share-btn-weibo"><i class="fab fa-weibo"></i></a></li></ul></div>
+<div class="share-box" aria-hidden="true"><ul class="share"><li><a href="https://twitter.com/intent/tweet?url=https://academic-demo.netlify.app/posts/writing-technical-content/&amp;text=Writing%20technical%20content%20in%20Academic" target="_blank" rel="noopener" class="share-btn-twitter"><i class="fab fa-twitter"></i></a></li><li><a href="https://www.facebook.com/sharer.php?u=https://academic-demo.netlify.app/posts/writing-technical-content/&amp;t=Writing%20technical%20content%20in%20Academic" target="_blank" rel="noopener" class="share-btn-facebook"><i class="fab fa-facebook"></i></a></li><li><a href="mailto:?subject=Writing%20technical%20content%20in%20Academic&amp;body=https://academic-demo.netlify.app/posts/writing-technical-content/" target="_blank" rel="noopener" class="share-btn-email"><i class="fas fa-envelope"></i></a></li><li><a href="https://www.linkedin.com/shareArticle?url=https://academic-demo.netlify.app/posts/writing-technical-content/&amp;title=Writing%20technical%20content%20in%20Academic" target="_blank" rel="noopener" class="share-btn-linkedin"><i class="fab fa-linkedin-in"></i></a></li><li><a href="whatsapp://send?text=Writing%20technical%20content%20in%20Academic%20https://academic-demo.netlify.app/posts/writing-technical-content/" target="_blank" rel="noopener" class="share-btn-whatsapp"><i class="fab fa-whatsapp"></i></a></li><li><a href="https://service.weibo.com/share/share.php?url=https://academic-demo.netlify.app/posts/writing-technical-content/&amp;title=Writing%20technical%20content%20in%20Academic" target="_blank" rel="noopener" class="share-btn-weibo"><i class="fab fa-weibo"></i></a></li></ul></div>
 
 <div class="media author-card content-widget-hr"><img class="avatar mr-3 avatar-circle" src="/ft-academic-resume/assets/img/person.jpg" alt="Nelson Bighetti"><div class="media-body"><h5 class="card-title"><a href="https://academic-demo.netlify.app">Nelson Bighetti</a></h5><h6 class="card-subtitle">Professor of Artificial Intelligence</h6><p class="card-text">My research interests include distributed robotics, mobile computing and programmable matter.</p><ul class="network-icon" aria-hidden="true"><li><a href="/ft-academic-resume/#contact"><i class="fas fa-envelope"></i></a></li><li><a href="https://twitter.com/GeorgeCushen" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a></li><li><a href="https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ" target="_blank" rel="noopener"><i class="fas fa-graduation-cap"></i></a></li><li><a href="https://github.com/gcushen" target="_blank" rel="noopener"><i class="fab fa-github"></i></a></li><li><a href="https://www.linkedin.com/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a></li></ul></div></div>
 
@@ -183,7 +198,7 @@ Crash --> [*]</div>
 
 <div class="container">
   <footer class="site-footer">
-    <p class="powered-by">Published with <a href="https://franklinjl.org" target="_blank" rel="noopener">Franklin.jl</a>
+    <p class="powered-by">Built with <a href="https://franklinjl.org" target="_blank" rel="noopener">Franklin.jl</a> and the <a href="https://julialang.org" target="_blank" rel="noopener">Julia Programming Language</a>.
 
       <span class="float-right" aria-hidden="true">
         <a href="#" class="back-to-top">

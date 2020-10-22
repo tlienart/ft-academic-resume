@@ -41,3 +41,13 @@ body { counter-reset: eqnum; }
 .small-ctr .js-plotly-plot {
     margin: auto;
 }
+
+/* ==================================================================
+    Tweaks to academic
+================================================================== */
+
+.profile {
+    text-align:center;
+    padding:30px 10px;
+    position:relative
+}

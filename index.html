@@ -1,149 +1,115 @@
-<!--
-TOCHECK: search
- -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
- <!doctype html>
- <html lang="en">
- <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Septimia Zenobia">
+  <meta name="description" content="Head of Research">
 
-   <meta name="author" content="Septimia Zenobia">
-   <meta name="description" content="Head of Research">
+  <meta name="theme-color" content="#2962ff">
 
-   <meta name="theme-color" content="#2962ff">
+  <link
+  rel=preconnect
+  href="https://fonts.gstatic.com"
+  crossorigin=anonymous>
 
-   <!-- STYLESHEETS -->
-   <link rel=preconnect href="https://fonts.gstatic.com" crossorigin>
-   <link rel=stylesheet href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin=anonymous>
-   <link rel=stylesheet href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin=anonymous>
-   <link rel=stylesheet href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin=anonymous>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin=anonymous async></script>
-   <link rel=stylesheet href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
-   <!-- locally served -->
-   <link rel=stylesheet href="/ft-academic-resume/libs/academic/academic.min.css">
+<link
+  rel=stylesheet
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"  crossorigin=anonymous>
 
-   <!-- <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script> -->
+<link
+  rel=stylesheet
+  href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css"
+  crossorigin=anonymous>
 
-   <!-- highlight + katex + plotly -->
-   
-   
-   
-   
+<link
+  rel=stylesheet
+  href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css"
+  crossorigin=anonymous>
 
-   <link rel=icon type=image/png href="/ft-academic-resume/assets/favicon.png">
-   <link rel=stylesheet href="/ft-academic-resume/css/extra.css">
+<link
+  rel=stylesheet
+  href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap"
+  crossorigin=anonymous>
 
-    <title>Academic template</title>  
- </head>
+<!-- locally served -->
+<link rel=stylesheet href="/ft-academic-resume/libs/academic/academic.min.css">
 
- <body id=top data-spy="scroll" data-offset="70" data-target=#navbar-main>
+<link rel=stylesheet href="/ft-academic-resume/css/extra.css">
 
-   <!-- DARK MODE TOGGLE -->
-   <script>window.staDarkLightChooser = true;</script>
-   <script>const isSiteThemeDark = false;</script>
-   <script src="/ft-academic-resume/libs/academic/load-theme.js"></script>
-
-   <!-- NAV BAR -->
-
-   <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id=navbar-main>
-     <div class=container>
-       <div class="d-none d-lg-inline-flex">
-         <a class=navbar-brand href="/ft-academic-resume/">Academic</a>
-       </div>
-       <button type=button class=navbar-toggler data-toggle=collapse data-target=#navbar-content aria-controls=navbar aria-expanded=false aria-label="Toggle navigation">
-         <span><i class="fas fa-bars"></i></span>
-       </button>
-       <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
-         <a class=navbar-brand href="/ft-academic-resume/">Academic</a>
-       </div>
-       <div class="navbar-collapse main-menu-item collapse justify-content-start" id=navbar-content>
-         <ul class="navbar-nav d-md-inline-flex">
-           <li class=nav-item><a class=nav-link href="/ft-academic-resume/#posts" data-target=#posts><span>Posts</span></a></li>
-           <li class=nav-item><a class=nav-link href="/ft-academic-resume/#projects" data-target=#projects><span>Projects</span></a></li>
-           <li class=nav-item><a class=nav-link href="/ft-academic-resume/#featured" data-target=#featured><span>Publications</span></a></li>
-           <li class=nav-item><a class=nav-link href="/ft-academic-resume/courses/"><span>Courses</span></a>
-           </li>
-         </ul>
-       </div>
-     </div>
-   </nav>
-
-   <span class="js-widget-page d-none"></span>
-<div class="franklin-content">
-
-   <!-- SECTION -->
+<!-- highlight + katex + plotly -->
 
 
-   <section id=about class="home-section wg-about">
-     <div class=container>
-       <div class=row>
-         <div class="col-12 col-lg-4">
-           <div id=profile>
-             <img class="avatar avatar-circle" src="/ft-academic-resume/assets/img/person.jpg" alt="Nelson Bighetti">
-             <div class=portrait-title>
-               <h2>Nelson Bighetti</h2>
-               <h3>Professor of Artificial Intelligence</h3>
-               <h3><a href="https://www.stanford.edu/" target=_blank rel=noopener><span>Stanford University</span></a></h3>
-             </div>
-             <ul class=network-icon aria-hidden=true>
-               <!-- <li><a href="/ft-academic-resume/#contact"><i class="fas fa-envelope big-icon"></i></a></li> -->
-               <li><a href="https://twitter.com/GeorgeCushen" target=_blank rel=noopener><i class="fab fa-twitter big-icon"></i></a></li>
-               <li><a href="https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ" target=_blank rel=noopener><i class="fas fa-graduation-cap big-icon"></i></a></li>
-               <li><a href="https://github.com/gcushen" target=_blank rel=noopener><i class="fab fa-github big-icon"></i></a></li>
-               <li><a href="https://www.linkedin.com/" target=_blank rel=noopener><i class="fab fa-linkedin big-icon"></i></a></li>
-             </ul>
-           </div>
-         </div>
-         <div class="col-12 col-lg-8">
-           <h1>Biography</h1>
-           <p>
-             Nelson Bighetti is a professor of artificial intelligence at the Stanford AI Lab. His research interests include distributed robotics, mobile computing and programmable matter. He leads the Robotic Neurobiology group, which develops
-             self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
-           </p>
-           <p>
-             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.
-           </p>
-           <p>
-             <i class="fas fa-download pr-1 fa-fw"></i>Download my <a href="/ft-academic-resume/assets/demo_resume.pdf" target=_blank>resumé</a>.
-           </p>
-           <div class=row>
-             <div class=col-md-5>
-               <h3>Interests</h3>
-               <ul class=ul-interests>
-                 <li>Artificial Intelligence</li>
-                 <li>Computational Linguistics</li>
-                 <li>Information Retrieval</li>
-               </ul>
-             </div>
-             <div class=col-md-7>
-               <h3>Education</h3>
-               <ul class="ul-edu fa-ul">
-                 <li><i class="fa-li fas fa-graduation-cap"></i>
-                   <div class=description>
-                     <p class=course>PhD in Artificial Intelligence, 2012</p>
-                     <p class=institution>Stanford University</p>
-                   </div>
-                 </li>
-                 <li><i class="fa-li fas fa-graduation-cap"></i>
-                   <div class=description>
-                     <p class=course>MEng in Artificial Intelligence, 2009</p>
-                     <p class=institution>Massachusetts Institute of Technology</p>
-                   </div>
-                 </li>
-                 <li><i class="fa-li fas fa-graduation-cap"></i>
-                   <div class=description>
-                     <p class=course>BSc in Artificial Intelligence, 2008</p>
-                     <p class=institution>Massachusetts Institute of Technology</p>
-                   </div>
-                 </li>
-               </ul>
-             </div>
-           </div>
-         </div>
-       </div>
-     </div>
-   </section>
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin=anonymous async></script>
+
+   <title>Academic template</title>  
+</head>
+
+<body id=top data-spy="scroll" data-offset="70" data-target=#navbar-main>
+
+  <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id=navbar-main>
+  <div class=container>
+    <!-- Main name -->
+    <div class="d-none d-lg-inline-flex">
+      <a class=navbar-brand href="/ft-academic-resume/">Academic</a>
+    </div>
+    <!-- Button for narrow mode -->
+    <button type=button class=navbar-toggler data-toggle=collapse data-target=#navbar-content aria-controls=navbar aria-expanded=false aria-label="Toggle navigation">
+      <span><i class="fas fa-bars"></i></span>
+    </button>
+    <!-- Main name for mobile mode -->
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class=navbar-brand href="/ft-academic-resume/">Academic</a>
+    </div>
+    <!-- Menu items -->
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id=navbar-content>
+      <ul class="navbar-nav d-md-inline-flex">
+        <li class=nav-item><a class=nav-link href="/ft-academic-resume/#posts" data-target=#posts><span>Recent posts</span></a></li>
+        <li class=nav-item><a class=nav-link href="/ft-academic-resume/#projects" data-target=#projects><span>Projects</span></a></li>
+        <li class=nav-item><a class=nav-link href="/ft-academic-resume/#featured" data-target=#featured><span>Publications</span></a></li>
+        <li class=nav-item><a class=nav-link href="/ft-academic-resume/posts/"><span>All Posts</span></a></li>
+        <li class=nav-item><a class=nav-link href="/ft-academic-resume/courses/"><span>Courses</span></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+  <span class="js-widget-page d-none"></span>
+<div class="franklin-content"><section id="about" class="home-section wg-about">
+  <div class="container">
+    <div class="row"></p>
+<div class="col-12 col-lg-4 profile"><img class="avatar avatar-circle" src="/ft-academic-resume/assets/img/person.jpg" alt="Nelson Bighetti"> <div class=portrait-title><h2>Nelson Bighetti</h2><h3>Professor of Artificial Intelligence</h3><h3><a href="https://www.stanford.edu/" target=_blank rel=noopener><span>Stanford University</span></a></h3><ul class=network-icon aria-hidden=true><li><a href="https://twitter.com/GeorgeCushen" target=_blank rel=noopener><i class="fab fa-twitter big-icon"></i></a></li><li><a href="https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ" target=_blank rel=noopener><i class="fas fa-graduation-cap big-icon"></i></a></li><li><a href="https://github.com/gcushen" target=_blank rel=noopener><i class="fab fa-github big-icon"></i></a></li><li><a href="https://www.linkedin.com/" target=_blank rel=noopener><i class="fab fa-linkedin big-icon"></i></a></li></ul></div></div>
+<div class="col-12 col-lg-8"><h1>Biography</h1>   Nelson Bighetti is a professor of artificial intelligence at the Stanford AI Lab. His research interests include distributed robotics, mobile computing and programmable matter. He leads the Robotic Neurobiology group, which develops   self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate. </br><p><i class="fas fa-download pr-1 fa-fw"></i>Download my <a href="/ft-academic-resume/assets/demo_resume.pdf" target=_blank>resumé</a>.</p>
+<div class=row><div class=col-md-5><h3>Interests</h3><ul class=ul-interests><li>Artificial Intelligence</li><li>Computational Linguistics</li><li>Information Retrieval</li></ul></div><div class=col-md-7><h3>Education</h3><ul class="ul-edu fa-ul"><li><i class="fa-li fas fa-graduation-cap"></i>
+  <div class=description>
+    <p class=course>PhD in Artificial Intelligence, 2012</p>
+    <p class=institution>Stanford University</p>
+  </div>
+</li>
+<li><i class="fa-li fas fa-graduation-cap"></i>
+  <div class=description>
+    <p class=course>MEng in Artificial Intelligence, 2009</p>
+    <p class=institution>Massachusetts Institute of Technology</p>
+  </div>
+</li>
+<li><i class="fa-li fas fa-graduation-cap"></i>
+  <div class=description>
+    <p class=course>BSc in Artificial Intelligence, 2008</p>
+    <p class=institution>Massachusetts Institute of Technology</p>
+  </div>
+</li>
+</ul></div></div></div>
+<p>    </div>
+  </div>
+</section>
+
 
    <!-- SECTION -->
 
@@ -284,9 +250,9 @@ TOCHECK: search
                  <div class="col-12 col-lg-8">
                    <div class="media stream-item">
                      <div class=media-body>
-                       <h3 class="article-title mb-0 mt-0"><a href="/ft-academic-resume/post/writing-technical-content/">Writing technical content in Academic</a>
+                       <h3 class="article-title mb-0 mt-0"><a href="/ft-academic-resume/posts/writing-technical-content/">Writing technical content in Academic</a>
                        </h3>
-                       <a href="/ft-academic-resume/post/writing-technical-content/" class=summary-link>
+                       <a href="/ft-academic-resume/posts/writing-technical-content/" class=summary-link>
                          <div class=article-style>Academic is designed to give technical content creators a seamless experience. You can focus on the content and Academic handles the rest. Highlight your code snippets, take notes on math classes, and draw diagrams from
                            textual representation.</div>
                          </a>
@@ -296,14 +262,14 @@ TOCHECK: search
                              <span class=middot-divider></span><span class=article-reading-time>5 min read</span></div>
                            </div>
                          </div>
-                         <div class=ml-3><a href="/ft-academic-resume/post/writing-technical-content/"><img src="/ft-academic-resume/assets/img/post1.jpg" alt="Writing technical content in Academic"></a>
+                         <div class=ml-3><a href="/ft-academic-resume/posts/writing-technical-content/"><img src="/ft-academic-resume/assets/img/post1.jpg" alt="Writing technical content in Academic"></a>
                          </div>
                        </div>
                        <div class="media stream-item">
                          <div class=media-body>
-                           <h3 class="article-title mb-0 mt-0"><a href="/ft-academic-resume/post/jupyter/">Display Jupyter Notebooks with Academic</a>
+                           <h3 class="article-title mb-0 mt-0"><a href="/ft-academic-resume/posts/jupyter/">Display Jupyter Notebooks with Academic</a>
                            </h3>
-                           <a href="/ft-academic-resume/post/jupyter/" class=summary-link>
+                           <a href="/ft-academic-resume/posts/jupyter/" class=summary-link>
                              <div class=article-style>Learn how to blog in Academic using Jupyter notebooks</div>
                            </a>
                            <div class="stream-meta article-metadata">
@@ -313,14 +279,14 @@ TOCHECK: search
                                  <span class=middot-divider></span><span class=article-reading-time>2 min read</span></div>
                                </div>
                              </div>
-                             <div class=ml-3><a href="/ft-academic-resume/post/jupyter/"><img src="/ft-academic-resume/assets/img/post2.png" alt="Display Jupyter Notebooks with Academic"></a>
+                             <div class=ml-3><a href="/ft-academic-resume/posts/jupyter/"><img src="/ft-academic-resume/assets/img/post2.png" alt="Display Jupyter Notebooks with Academic"></a>
                              </div>
                            </div>
                            <div class="media stream-item">
                              <div class=media-body>
-                               <h3 class="article-title mb-0 mt-0"><a href="/ft-academic-resume/post/getting-started/">Academic: the website builder for Hugo</a>
+                               <h3 class="article-title mb-0 mt-0"><a href="/ft-academic-resume/posts/getting-started/">Academic: the website builder for Hugo</a>
                                </h3>
-                               <a href="/ft-academic-resume/post/getting-started/" class=summary-link>
+                               <a href="/ft-academic-resume/posts/getting-started/" class=summary-link>
                                  <div class=article-style>Create a beautifully simple website in under 10 minutes.</div>
                                </a>
                                <div class="stream-meta article-metadata">
@@ -331,7 +297,7 @@ TOCHECK: search
                                      <span class=middot-divider></span><span class=article-categories><i class="fas fa-folder mr-1"></i><a href="/ft-academic-resume/category/demo/">Demo</a>, <a href="/ft-academic-resume/category/%E6%95%99%E7%A8%8B/">教程</a></span></div>
                                    </div>
                                  </div>
-                                 <div class=ml-3><a href="/ft-academic-resume/post/getting-started/"><img src="/ft-academic-resume/assets/img/post3.jpg" alt="Academic: the website builder for Hugo"></a>
+                                 <div class=ml-3><a href="/ft-academic-resume/posts/getting-started/"><img src="/ft-academic-resume/assets/img/post3.jpg" alt="Academic: the website builder for Hugo"></a>
                                  </div>
                                </div>
                              </div>
@@ -524,7 +490,7 @@ TOCHECK: search
  
 <div class="container">
   <footer class="site-footer">
-    <p class="powered-by">Published with <a href="https://franklinjl.org" target="_blank" rel="noopener">Franklin.jl</a>
+    <p class="powered-by">Built with <a href="https://franklinjl.org" target="_blank" rel="noopener">Franklin.jl</a> and the <a href="https://julialang.org" target="_blank" rel="noopener">Julia Programming Language</a>.
 
       <span class="float-right" aria-hidden="true">
         <a href="#" class="back-to-top">
