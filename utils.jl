@@ -1,15 +1,11 @@
 using FranklinUtils
 
-# -------------------------- #
-# Academic blocks // General #
-# -------------------------- #
+# ----------------------------------- #
+# Academic blocks // General elements #
+# ----------------------------------- #
 
-@env function section(md; title="", name=title, class="", heading=true, rowclass="")
+@env function section(md; name="", class="wg-$name",rowclass="")
     id = Franklin.refstring(name)
-    header = ">"
-    if heading
-        header = "section-heading> <h1>$title</h1>"
-    end
     return html("""
         <section id=\"$id\" class=\"home-section $class\">
           <div class="container">
@@ -21,16 +17,16 @@ end
 
 @lx function sectionheading(title; class="")
     return html("""
-        <div class="$class section-heading"><h1>Skills</h1></div>
+        <div class="$class section-heading"><h1>$title</h1></div>
         """)
 end
 
 # Insert an image with given class, alt, src
 @lx img(src; class="", alt="") = html("""<img class="$class" src="$src" alt="$alt">""")
 
-# -------------------------------------- #
-# Academic blocks // Landing page blocks #
-# -------------------------------------- #
+# ---------------------------------------- #
+# Academic blocks // Landing page elements #
+# ---------------------------------------- #
 
 # Portrait block with a few optional fields: name, job title, social buttons
 @lx function portrait(; name="", job="", link="", linkname="",
@@ -96,9 +92,136 @@ end
     return String(take!(io))
 end
 
-# function lx_skill(c, _)
-#
-# end
+# skill featurette
+@lx function skill(name, sub=""; img="", fa="",
+                   imgstyle="display:inline-block; width:56px;",
+                   fastyle="")
+    illustration = ""
+    if !isempty(img)
+        illustration = """<img style="$imgstyle" src="$img">"""
+    elseif !isempty(fa)
+        illustration = """<i class="fas fa-$fa" style="$fastyle"></i>"""
+    end
+
+    return """
+        <div class="col-12 col-sm-4">
+          <div class=featurette-icon style="text-align:center;">
+          """ * illustration * """
+          </div>
+          <h3>$name</h3>
+          $(ifelse(isempty(sub), "", "<p>$sub</p>"))
+        </div>""" |> html
+end
+
+# experience cards
+@lx function experience(; title="", company="", descr="",
+                          from="", to="", location="", active=false,
+                          first=active)
+    fill = ifelse(active, "exp-fill", "")
+    # elements for the vertical bar with filled/unfilled pill
+    # they are assembled depending on 'first' so that they can connect.
+    pill = """
+        <div class=m-2><span class="badge badge-pill border $fill">&nbsp;</span></div>"""
+    vbar = """
+        <div class="row h-50">
+          <div class="col border-right">&nbsp;</div>
+          <div class=col>&nbsp;</div>
+        </div>"""
+    vspace = """
+        <div class="row h-50">
+          <div class=col>&nbsp;</div>
+          <div class=col>&nbsp;</div>
+        </div>"""
+
+    return html("""
+        <div class="row experience">
+          <div class="col-auto text-center flex-column d-none d-sm-flex">
+            <!--
+              Element next to the card (pill) with a full/empty circle
+              to give a visual idea of the timeline
+            -->
+            $(ifelse(first, vspace * pill * vbar, vbar * pill * vspace))
+          </div>
+
+          <!--
+            Card and text
+          -->
+          <div class="col py-2">
+            <div class=card>
+              <div class=card-body>
+                <h4 class="card-title exp-title text-muted mt-0 mb-1">$title</h4>
+                <h4 class="card-title exp-company text-muted my-0">$company</h4>
+                <div class="text-muted exp-meta">$from – $to
+                  <span class=middot-divider></span><span>$location</span>
+                </div>
+                <div class=card-text>""") * descr * html("""
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>""")
+end
+
+@lx function certificate(; title="", meta="", metalink="", date="", descr="",
+                           cert="See certificate", certlink="")
+    origin = ifelse(isempty(metalink), meta, """
+        <a href="$metalink" target=_blank rel=noopener>$meta</a>
+        """)
+    certificate = ifelse(isempty(certlink), "", """
+        <a class=card-link href="$certlink" target=_blank rel=noopener>$cert</a>
+        """)
+    description = ifelse(isempty(descr), "", """
+        <div class=card-text>$(Franklin.fd2html(descr, internal=true))</div>
+        """)
+    return html("""
+        <div class="card experience course">
+          <div class=card-body>
+            <h4 class="card-title exp-title text-muted my-0">$title</h4>
+            <div class="card-subtitle my-0 article-metadata">
+              $origin
+              <span class=middot-divider></span>
+              $date
+            </div>
+            $description
+            $certificate
+            </div>
+          </div>
+        """)
+end
+
+# -------------------- #
+# List of recent posts #
+# -------------------- #
+function hfun_recentposts(params)
+    n = parse(Int, params[1])
+
+    path = "/posts/writing-technical-content/"
+    title = "Writing technical content in Academic"
+    summary = "Academic is designed to give technical content creators a seamless experience. You can focus on the content and Academic handles the rest. Highlight your code snippets, take notes on math classes, and draw diagrams from textual representation."
+    date = "Aug 26, 2020"
+    readtime = "5"
+    imgpath = "/assets/img/post1.jpg"
+
+    return """
+        <div class="media stream-item">
+          <div class=media-body>
+            <h3 class="article-title mb-0 mt-0"><a href="$path">$title</a></h3>
+            <a href="$path" class=summary-link>
+              <div class=article-style>$summary</div>
+            </a>
+            <div class="stream-meta article-metadata">
+              <div class=article-metadata><span class=article-date>Last updated on $date</span>
+                <span class=middot-divider></span><span class=article-reading-time>$(readtime)m read</span>
+              </div>
+            </div>
+          </div>
+          <div class=ml-3>
+            <a href="$path"><img src="$imgpath" alt="$title"></a>
+          </div>
+        </div>"""
+end
+
+
 
 # --------------------------------- #
 # Working with Javascript Libraries #
