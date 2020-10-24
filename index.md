@@ -1,6 +1,10 @@
 @def title = "Academic template"
 
-\begin{section}{name="about", class="wg-about"}
+<!-- -----------------
+     BIOGRAPHY SECTION
+     ----------------- -->
+
+\begin{section}{name="about"}
 
 <!-- LEFT COLUMN -->
 @@col-12,col-lg-4,profile
@@ -16,8 +20,7 @@
   github="https://github.com/gcushen",
   linkedin="https://www.linkedin.com/"
 }
-
-@@
+@@ <!-- end of column -->
 
 <!-- RIGHT COLUMN -->
 @@col-12,col-lg-8
@@ -37,218 +40,115 @@
     ("BSc in Artificial Intelligence, 2008", "Massachusetts Institute of Technology")]
 }
 
-@@
-
+@@ <!-- end of column -->
 \end{section}
 
-<!-- SKILLS -->
+<!-- --------------
+     SKILLS SECTION
+     -------------- -->
+
 \begin{section}{name="skills", class="wg-featurette", rowclass="featurette"}
 
 \sectionheading{"Skills", class="col-md-12"}
 
-<!-- \skill{Julia, 90%, img="/assets/img/julia-dots.svg"}
-\skill{Machine Learning, 100%, fa="chart-line"}
-\skill{Photography, 10%, fa="camera-retro"} -->
+\skill{"Julia", "90%", img="/assets/img/julia-dots.svg"}
+\skill{"Machine Learning", "100%", fa="chart-line"}
+\skill{"Photography", "10%", fa="camera-retro"}
+
+\end{section}
+
+
+<!-- ------------------
+     EXPERIENCE SECTION
+     ------------------ -->
+
+\begin{section}{name="experience"}
+
+\sectionheading{"Experience", class="col-12 col-lg-4"}
+
+@@col-12,col-lg-8
+
+\experience{
+  title="CEO",
+  company="GenCoin",
+  descr="""
+    Responsibilities include:
+    * Analysing
+    * Modelling
+    * Deploying
+    """,
+  from="Jan 2017",
+  to="Present",
+  location="California",
+  active=true
+  }
+\experience{
+  title="Professor",
+  company="University X",
+  from="Jan 2016",
+  to="Dec 2016",
+  location="California",
+  descr="Taught electronic engineering and researched semiconductor physics."
+  }
+
+@@
+
+\end{section}
+
+<!-- -----------------------
+     ACCOMPLISHMENTS SECTION
+     ----------------------- -->
+
+\begin{section}{name="accomplishments"}
+
+\sectionheading{"Accomplish­ments", class="col-12 col-lg-4"}
+
+@@col-12,col-lg-8
+
+\certificate{
+  title="Neural Networks and Deep Learning",
+  meta="Coursera",
+  metalink="https://www.coursera.org",
+  date="Oct 2018",
+  certlink="https://www.coursera.org"
+  }
+\certificate{
+  title="Blockchain Fundamentals",
+  descr="Formulated informed **blockchain** models, hypotheses, and use cases.",
+  meta="Coursera",
+  metalink="https://www.edx.org",
+  date="Mar 2018",
+  certlink="https://www.edx.org"
+  }
+\certificate{
+  title="Object-Oriented Programming in R: S3 and R6 Course",
+  meta="DataCamp",
+  metalink="https://www.datacamp.com",
+  date="Jul 2017 – Dec 2017",
+  certlink="https://www.datacamp.com"
+}
+
+@@
+
+\end{section}
+
+<!-- -------------
+     POSTS SECTION
+     ------------- -->
+
+\begin{section}{name="posts", class="wg-pages"}
+
+\sectionheading{"Recent Posts", class="col-12 col-lg-4"}
+
+@@col-12,col-lg-8
+
+{{recentposts 3}}
+
+@@
 
 \end{section}
 
 ~~~
-
-   <!-- SECTION -->
-
-   <section id=skills class="home-section wg-featurette">
-     <div class=container>
-       <div class="row featurette">
-         <div class="col-md-12 section-heading">
-           <h1>Skills</h1>
-         </div>
-         <div class="col-12 col-sm-4">
-           <div class=featurette-icon style="text-align: center;"><img style="display: inline-block; width:56px;" src="/assets/img/julia-dots.svg"></div>
-           <h3>Julia</h3>
-           <p>90%</p>
-         </div>
-         <div class="col-12 col-sm-4">
-           <div class=featurette-icon><i class="fas fa-chart-line"></i></div>
-           <h3>Machine Learning</h3>
-           <p>100%</p>
-         </div>
-         <div class="col-12 col-sm-4">
-           <div class=featurette-icon><i class="fas fa-camera-retro"></i></div>
-           <h3>Photography</h3>
-           <p>10%</p>
-         </div>
-       </div>
-     </div>
-   </section>
-
- <!-- SECTION -->
-
- <section id=experience class="home-section wg-experience">
-   <div class=container>
-     <div class=row>
-       <div class="col-12 col-lg-4 section-heading">
-         <h1>Experience</h1>
-       </div>
-       <div class="col-12 col-lg-8">
-         <div class="row experience">
-           <div class="col-auto text-center flex-column d-none d-sm-flex">
-             <div class="row h-50">
-               <div class=col>&nbsp;</div>
-               <div class=col>&nbsp;</div>
-             </div>
-             <div class=m-2><span class="badge badge-pill border exp-fill">&nbsp;</span></div>
-             <div class="row h-50">
-               <div class="col border-right">&nbsp;</div>
-               <div class=col>&nbsp;</div>
-             </div>
-           </div>
-           <div class="col py-2">
-             <div class=card>
-               <div class=card-body>
-                 <h4 class="card-title exp-title text-muted mt-0 mb-1">CEO</h4>
-                 <h4 class="card-title exp-company text-muted my-0">GenCoin</h4>
-                 <div class="text-muted exp-meta">Jan 2017 – Present
-                   <span class=middot-divider></span><span>California</span></div>
-                   <div class=card-text>
-                     <p>Responsibilities include:</p>
-                     <ul>
-                       <li>Analysing</li>
-                       <li>Modelling</li>
-                       <li>Deploying</li>
-                     </ul>
-                   </div>
-                 </div>
-               </div>
-             </div>
-           </div>
-           <div class="row experience">
-             <div class="col-auto text-center flex-column d-none d-sm-flex">
-               <div class="row h-50">
-                 <div class="col border-right">&nbsp;</div>
-                 <div class=col>&nbsp;</div>
-               </div>
-               <div class=m-2><span class="badge badge-pill border">&nbsp;</span></div>
-               <div class="row h-50">
-                 <div class=col>&nbsp;</div>
-                 <div class=col>&nbsp;</div>
-               </div>
-             </div>
-             <div class="col py-2">
-               <div class=card>
-                 <div class=card-body>
-                   <h4 class="card-title exp-title text-muted mt-0 mb-1">Professor</h4>
-                   <h4 class="card-title exp-company text-muted my-0">University X</h4>
-                   <div class="text-muted exp-meta">Jan 2016 – Dec 2016
-                     <span class=middot-divider></span><span>California</span></div>
-                     <div class=card-text>Taught electronic engineering and researched semiconductor physics.</div>
-                   </div>
-                 </div>
-               </div>
-             </div>
-           </div>
-         </div>
-       </div>
-     </section>
-
-
-
-     <section id=accomplishments class="home-section wg-accomplishments">
-       <div class=container>
-         <div class=row>
-           <div class="col-12 col-lg-4 section-heading">
-             <h1>Accomplish­ments</h1>
-           </div>
-           <div class="col-12 col-lg-8">
-             <div class="card experience course">
-               <div class=card-body>
-                 <h4 class="card-title exp-title text-muted my-0">Neural Networks and Deep Learning</h4>
-                 <div class="card-subtitle my-0 article-metadata"><a href="https://www.coursera.org" target=_blank rel=noopener>Coursera</a><span class=middot-divider></span> Oct 2018</div><a class=card-link href="https://www.coursera.org" target=_blank rel=noopener>See certificate</a></div>
-               </div>
-               <div class="card experience course">
-                 <div class=card-body>
-                   <a href="https://www.edx.org/professional-certificate/uc-berkeleyx-blockchain-fundamentals" target=_blank rel=noopener>
-                     <h4 class="card-title exp-title text-muted my-0">Blockchain Fundamentals</h4>
-                   </a>
-                   <div class="card-subtitle my-0 article-metadata"><a href="https://www.edx.org" target=_blank rel=noopener>edX</a><span class=middot-divider></span> Mar 2018</div>
-                   <div class=card-text>Formulated informed blockchain models, hypotheses, and use cases.</div><a class=card-link href="https://www.edx.org" target=_blank rel=noopener>See certificate</a></div>
-                 </div>
-                 <div class="card experience course">
-                   <div class=card-body>
-                     <h4 class="card-title exp-title text-muted my-0">Object-Oriented Programming in R: S3 and R6 Course</h4>
-                     <div class="card-subtitle my-0 article-metadata"><a href="https://www.datacamp.com" target=_blank rel=noopener>DataCamp</a><span class=middot-divider></span> Jul 2017 – Dec 2017</div><a class=card-link href="https://www.datacamp.com" target=_blank rel=noopener>See certificate</a></div>
-                   </div>
-                 </div>
-               </div>
-             </div>
-           </section>
-
-
-
-           <section id=posts class="home-section wg-pages">
-             <div class=container>
-               <div class=row>
-                 <div class="col-12 col-lg-4 section-heading">
-                   <h1>Recent Posts</h1>
-                 </div>
-                 <div class="col-12 col-lg-8">
-                   <div class="media stream-item">
-                     <div class=media-body>
-                       <h3 class="article-title mb-0 mt-0"><a href="/posts/writing-technical-content/">Writing technical content in Academic</a>
-                       </h3>
-                       <a href="/posts/writing-technical-content/" class=summary-link>
-                         <div class=article-style>Academic is designed to give technical content creators a seamless experience. You can focus on the content and Academic handles the rest. Highlight your code snippets, take notes on math classes, and draw diagrams from
-                           textual representation.</div>
-                         </a>
-                         <div class="stream-meta article-metadata">
-                           <div class=article-metadata><span class=article-date>Last updated on
-                             Aug 26, 2020</span>
-                             <span class=middot-divider></span><span class=article-reading-time>5 min read</span></div>
-                           </div>
-                         </div>
-                         <div class=ml-3><a href="/posts/writing-technical-content/"><img src="/assets/img/post1.jpg" alt="Writing technical content in Academic"></a>
-                         </div>
-                       </div>
-                       <div class="media stream-item">
-                         <div class=media-body>
-                           <h3 class="article-title mb-0 mt-0"><a href="/posts/jupyter/">Display Jupyter Notebooks with Academic</a>
-                           </h3>
-                           <a href="/posts/jupyter/" class=summary-link>
-                             <div class=article-style>Learn how to blog in Academic using Jupyter notebooks</div>
-                           </a>
-                           <div class="stream-meta article-metadata">
-                             <div class=article-metadata>
-                               <div><span><a href="/author/nelson-bighetti/">Nelson Bighetti</a></span></div><span class=article-date>Last updated on
-                                 Sep 5, 2019</span>
-                                 <span class=middot-divider></span><span class=article-reading-time>2 min read</span></div>
-                               </div>
-                             </div>
-                             <div class=ml-3><a href="/posts/jupyter/"><img src="/assets/img/post2.png" alt="Display Jupyter Notebooks with Academic"></a>
-                             </div>
-                           </div>
-                           <div class="media stream-item">
-                             <div class=media-body>
-                               <h3 class="article-title mb-0 mt-0"><a href="/posts/getting-started/">Academic: the website builder for Hugo</a>
-                               </h3>
-                               <a href="/posts/getting-started/" class=summary-link>
-                                 <div class=article-style>Create a beautifully simple website in under 10 minutes.</div>
-                               </a>
-                               <div class="stream-meta article-metadata">
-                                 <div class=article-metadata>
-                                   <div><span><a href="/author/nelson-bighetti/">Nelson Bighetti</a></span>, <span><a href="/author/%E5%90%B3%E6%81%A9%E9%81%94/">吳恩達</a></span></div><span class=article-date>Last updated on
-                                     Apr 24, 2020</span>
-                                     <span class=middot-divider></span><span class=article-reading-time>3 min read</span>
-                                     <span class=middot-divider></span><span class=article-categories><i class="fas fa-folder mr-1"></i><a href="/category/demo/">Demo</a>, <a href="/category/%E6%95%99%E7%A8%8B/">教程</a></span></div>
-                                   </div>
-                                 </div>
-                                 <div class=ml-3><a href="/posts/getting-started/"><img src="/assets/img/post3.jpg" alt="Academic: the website builder for Hugo"></a>
-                                 </div>
-                               </div>
-                             </div>
-                           </div>
-                         </div>
-                       </section>
-
-
    <!-- SECTION -->
 
    <section id=projects class="home-section wg-portfolio">
