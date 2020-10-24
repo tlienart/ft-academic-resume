@@ -2,6 +2,7 @@
 
 \begin{section}{name="about", class="wg-about"}
 
+<!-- LEFT COLUMN -->
 @@col-12,col-lg-4,profile
 
 \img{"/assets/img/person.jpg", class="avatar avatar-circle", alt="Nelson Bighetti"}
@@ -16,8 +17,9 @@
   linkedin="https://www.linkedin.com/"
 }
 
-@@ <!-- end of left-column -->
+@@
 
+<!-- RIGHT COLUMN -->
 @@col-12,col-lg-8
 
 \begin{biography}{resume="/assets/demo_resume.pdf"}
@@ -35,7 +37,18 @@
     ("BSc in Artificial Intelligence, 2008", "Massachusetts Institute of Technology")]
 }
 
-@@ <!-- end of right-column -->
+@@
+
+\end{section}
+
+<!-- SKILLS -->
+\begin{section}{name="skills", class="wg-featurette", rowclass="featurette"}
+
+\sectionheading{"Skills", class="col-md-12"}
+
+<!-- \skill{Julia, 90%, img="/assets/img/julia-dots.svg"}
+\skill{Machine Learning, 100%, fa="chart-line"}
+\skill{Photography, 10%, fa="camera-retro"} -->
 
 \end{section}
 

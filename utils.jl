@@ -4,12 +4,7 @@ using FranklinUtils
 # Academic blocks // General #
 # -------------------------- #
 
-function env_section(e, _)
-    md = Franklin.content(e)
-    _, kwargs = lxargs(lxproc(e), "section")
-    return _section(md; kwargs...)
-end
-function _section(md; title="", name=title, class="", heading=true)
+@env function section(md; title="", name=title, class="", heading=true, rowclass="")
     id = Franklin.refstring(name)
     header = ">"
     if heading
@@ -18,30 +13,27 @@ function _section(md; title="", name=title, class="", heading=true)
     return html("""
         <section id=\"$id\" class=\"home-section $class\">
           <div class="container">
-            <div class="row">""") * md * html("""
+            <div class="row $rowclass">""") * md * html("""
             </div>
           </div>
         </section>""")
 end
 
-"""Insert an image with given class, alt, src"""
-function lx_img(c, _)
-    a, kwargs = lxargs(lxproc(c), "img")
-    @assert length(a) == 1 "Expected at least one argument pointing to the source of the image."
-    return _img(a[1]; kwargs...)
+@lx function sectionheading(title; class="")
+    return html("""
+        <div class="$class section-heading"><h1>Skills</h1></div>
+        """)
 end
-_img(src; class="", alt="") = html("""<img class="$class" src="$src" alt="$alt">""")
+
+# Insert an image with given class, alt, src
+@lx img(src; class="", alt="") = html("""<img class="$class" src="$src" alt="$alt">""")
 
 # -------------------------------------- #
 # Academic blocks // Landing page blocks #
 # -------------------------------------- #
 
-"""Portrait block with a few optional fields: name, job title, social buttons"""
-function lx_portrait(c, _)
-    _, kwargs = lxargs(lxproc(c), "portrait")
-    return _portrait(; kwargs...)
-end
-function _portrait(; name="", job="", link="", linkname="",
+# Portrait block with a few optional fields: name, job title, social buttons
+@lx function portrait(; name="", job="", link="", linkname="",
                      twitter="", gscholar="", github="", linkedin="")
     io = IOBuffer()
     write(io, html("<div class=portrait-title>"))
@@ -66,13 +58,8 @@ function _portrait(; name="", job="", link="", linkname="",
     return String(take!(io))
 end
 
-"""Biography block with optional resume link"""
-function env_biography(e, _)
-    md = Franklin.content(e)
-    _, kwargs = lxargs(lxproc(e), "biography")
-    return _biography(md; kwargs...)
-end
-function _biography(md; resume="")
+# Biography block with optional resume link
+@env function biography(md; resume="")
     io = IOBuffer()
     write(io, html("""<h1>Biography</h1>""") * md)
     isempty(resume) || write(io, html("""
@@ -80,12 +67,8 @@ function _biography(md; resume="")
     return String(take!(io))
 end
 
-"""Short CV block with a column for interests and one for education"""
-function lx_shortcv(c, _)
-    _, kwargs = lxargs(lxproc(c), "shortcv")
-    return _shortcv(; kwargs...)
-end
-function _shortcv(; interests=nothing, education=nothing)
+# Short CV block with a column for interests and one for education
+@lx function shortcv(; interests=nothing, education=nothing)
     io = IOBuffer()
     write(io, html("""<div class=row>"""))
     if !isnothing(interests)
@@ -112,6 +95,10 @@ function _shortcv(; interests=nothing, education=nothing)
     write(io, html("""</div>""")) # end row
     return String(take!(io))
 end
+
+# function lx_skill(c, _)
+#
+# end
 
 # --------------------------------- #
 # Working with Javascript Libraries #
