@@ -1,0 +1,17 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Franklin Template</title>
+  <description><![CDATA[Example website using Franklin
+]]></description>
+  <link>https://tlienart.github.io/FranklinTemplates.jl/</link>
+  <atom:link href="https://tlienart.github.io/FranklinTemplates.jl/feed.xml" rel="self" type="application/rss+xml" />
+  <item>
+    <title>Writing Technical Content</title>
+    <link>https://tlienart.github.io/FranklinTemplates.jl/posts/2020/08/writing-technical-content/index.html</link>
+    <description><![CDATA[Academic is designed to give technical content creators a seamless experience. You can focus on the content and Academic handles the rest. Highlight your code snippets, take notes on math classes, and draw diagrams from textual representation.
+<br><a href="https://tlienart.github.io/FranklinTemplates.jl/posts/2020/08/writing-technical-content/index.html">Read more</a>]]></description>
+    <guid>https://tlienart.github.io/FranklinTemplates.jl/posts/2020/08/writing-technical-content/index.html</guid>
+    <pubDate>Sun, 25 Oct 2020 00:00:00 UT</pubDate>
+  </item>
+</channel>
+</rss>
