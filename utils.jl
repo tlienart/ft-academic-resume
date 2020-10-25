@@ -192,35 +192,89 @@ end
 # -------------------- #
 # List of recent posts #
 # -------------------- #
-function hfun_recentposts(params)
-    n = parse(Int, params[1])
 
-    path = "/posts/writing-technical-content/"
-    title = "Writing technical content in Academic"
-    summary = "Academic is designed to give technical content creators a seamless experience. You can focus on the content and Academic handles the rest. Highlight your code snippets, take notes on math classes, and draw diagrams from textual representation."
-    date = "Aug 26, 2020"
-    readtime = "5"
-    imgpath = "/assets/img/post1.jpg"
-
-    return """
-        <div class="media stream-item">
-          <div class=media-body>
-            <h3 class="article-title mb-0 mt-0"><a href="$path">$title</a></h3>
-            <a href="$path" class=summary-link>
-              <div class=article-style>$summary</div>
-            </a>
-            <div class="stream-meta article-metadata">
-              <div class=article-metadata><span class=article-date>Last updated on $date</span>
-                <span class=middot-divider></span><span class=article-reading-time>$(readtime)m read</span>
-              </div>
-            </div>
-          </div>
-          <div class=ml-3>
-            <a href="$path"><img src="$imgpath" alt="$title"></a>
-          </div>
-        </div>"""
+function all_posts()
+    # expected file structure here is posts/YYYY/MM/name-of-post.md
+    posts = Pair{String,Date}[]
+    for (root, _, files) in walkdir(joinpath(Franklin.FOLDER_PATH[], "posts"))
+        for file in files
+            endswith(file, ".md") || continue
+            ppath = joinpath(root, file)
+            endswith(ppath, joinpath("posts", "index.md")) && continue
+            tmp, fn = splitdir(ppath)
+            tmp, mm = splitdir(tmp)
+            tmp, yy = splitdir(tmp)
+            rpath = joinpath("posts", yy, mm, splitext(fn)[1])
+            date = pagevar(rpath, "pubdate")
+            isnothing(date) && (date = Date("$yy-$mm-01"))
+            push!(posts, rpath => date)
+        end
+    end
+    # sort by chron order, most recent first
+    return sort(posts, by=(e->e.second), rev=true)
 end
 
+function show_posts(posts; byyear=false)
+    isempty(posts) && return ""
+    curyear = year(posts[1].second)
+    io = IOBuffer()
+    byyear && write(io, """
+        <div class="col-12 col-lg-4"><h1>$curyear</h1></div>
+        <div class="col-12 col-lg-8">
+        """)
+    for post in posts
+        if byyear && year(post.second) < curyear
+            curyear = year(post.second)
+            write(io, """
+                </div>
+                <div class="col-12 col-lg-4"><h1>$curyear</h1></div>
+                <div class="col-12 col-lg-8">
+                """)
+        end
+        rpath = post.first
+        title = pagevar(rpath, "title")
+        isnothing(title) && (title = "Untitled")
+        summary = pagevar(rpath, "summary")
+        isnothing(summary) && (summary = "")
+        date = Dates.format(post.second, dateformat"u d, Y")
+        imgpath = pagevar(rpath, "img")
+        if isnothing(imgpath)
+            imgpath = ""
+        else
+            if imgpath[1] != '/'
+                imgpath = "/$imgpath"
+            end
+        end
+        write(io, """
+            <div class="media stream-item">
+              <div class=media-body>
+                <h3 class="article-title mb-0 mt-0"><a href="/$rpath">$title</a></h3>
+                <a href="/$rpath" class=summary-link>
+                  <div class=article-style>$summary</div>
+                </a>
+                <div class="stream-meta article-metadata">
+                  <div class=article-metadata><span class=article-date>Published on $date.</span>
+                  </div>
+                </div>
+              </div>
+              <div class=ml-3>
+                <a href="/$rpath"><img src="$imgpath" alt="$title"></a>
+              </div>
+            </div>""")
+    end
+    return String(take!(io))
+end
+
+function hfun_recentposts(params)
+    n = parse(Int, params[1])
+    allposts = all_posts()
+    posts = allposts[1:min(n, length(allposts))]
+    return show_posts(posts)
+end
+
+function hfun_allposts()
+    return show_posts(all_posts(), byyear=true)
+end
 
 
 # --------------------------------- #

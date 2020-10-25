@@ -2,6 +2,12 @@
 title = "Writing Technical Content"
 hasplotly = true
 hasmermaid = true
+pubdate = Date("2020-08-05") # yyyy-mm-dd format by default
+summary = """
+  Academic is designed to give technical content creators a seamless experience. You can focus on the content and Academic handles the rest. Highlight your code snippets, take notes on math classes, and draw diagrams from textual representation.
+  """
+rss = summary
+img = "assets/img/post1.jpg"
 +++
 
 ~~~

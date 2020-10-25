@@ -1,5 +1,6 @@
 +++
-author = "Septimia Zenobia"
+author = "Nelson Bighetti"
+shortauthor = "N. Bighetti"
 jobtitle = "Head of Research"
 
 mintoclevel = 2
