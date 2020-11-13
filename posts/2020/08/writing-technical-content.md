@@ -1,35 +1,18 @@
 +++
 title = "Writing Technical Content"
-hasplotly = true
-hasmermaid = true
-pubdate = Date("2020-08-05") # yyyy-mm-dd format by default
+
 summary = """
   Academic is designed to give technical content creators a seamless experience. You can focus on the content and Academic handles the rest. Highlight your code snippets, take notes on math classes, and draw diagrams from textual representation.
   """
 rss = summary
-img = "assets/img/post1.jpg"
+pubdate = Date("2020-08-05") # yyyy-mm-dd format by default
+
+img = "/assets/img/post1.jpg"
+hero = "/assets/img/post1_hero.jpg"
+
+hasplotly = true
+hasmermaid = true
 +++
-
-~~~
-
-<article class=article>
-
-  <div class="article-container pt-3">
-    <h1>Writing technical content in Academic</h1>
-    <div class="article-metadata">
-      <span class="article-date">Last updated on Aug 26, 2020</span> <span class="middot-divider"></span><span class="article-reading-time">5 min read</span>
-    </div>
-  </div>
-
-  <div class="article-header container-fluid featured-image-wrapper mt-4 mb-4" style="max-width:2000px;max-height:1333px">
-    <div style="position:relative">
-      <img src="/assets/posts/writing-technical-content/hero.jpg" alt="" class="featured-image">
-      <span class="article-header-caption">Image credit: <a href="https://unsplash.com/photos/OGZtQF8iC0g"><strong>John Moeses Bauan</strong></a></span>
-    </div>
-  </div>
-  <div class="article-container">
-    <div class="article-style">
-~~~
 
 Academic is designed to give technical content creators a seamless experience. You can focus on the content and Academic handles the rest.
 
@@ -82,7 +65,7 @@ z =  [10     10.625  12.5  15.625  20
 data   = PlotlyJS.contour(; z=z)
 layout = PlotlyJS.Layout()
 plot   = PlotlyJS.plot(data, layout)
-jplot  = PlotlyJS.json(plot)
+jplot  = PlotlyJS.json(plot) # hide
 
 fdplotly(jplot) # hide
 ```
@@ -158,14 +141,3 @@ Crash --> [*]
 \icon{mouse} with `\icon{mouse}`
 
 etc.
-
-~~~
-    </div> <!-- article style -->
-
-<div class="share-box" aria-hidden="true"><ul class="share"><li><a href="https://twitter.com/intent/tweet?url=https://academic-demo.netlify.app/posts/writing-technical-content/&amp;text=Writing%20technical%20content%20in%20Academic" target="_blank" rel="noopener" class="share-btn-twitter"><i class="fab fa-twitter"></i></a></li><li><a href="https://www.facebook.com/sharer.php?u=https://academic-demo.netlify.app/posts/writing-technical-content/&amp;t=Writing%20technical%20content%20in%20Academic" target="_blank" rel="noopener" class="share-btn-facebook"><i class="fab fa-facebook"></i></a></li><li><a href="mailto:?subject=Writing%20technical%20content%20in%20Academic&amp;body=https://academic-demo.netlify.app/posts/writing-technical-content/" target="_blank" rel="noopener" class="share-btn-email"><i class="fas fa-envelope"></i></a></li><li><a href="https://www.linkedin.com/shareArticle?url=https://academic-demo.netlify.app/posts/writing-technical-content/&amp;title=Writing%20technical%20content%20in%20Academic" target="_blank" rel="noopener" class="share-btn-linkedin"><i class="fab fa-linkedin-in"></i></a></li><li><a href="whatsapp://send?text=Writing%20technical%20content%20in%20Academic%20https://academic-demo.netlify.app/posts/writing-technical-content/" target="_blank" rel="noopener" class="share-btn-whatsapp"><i class="fab fa-whatsapp"></i></a></li><li><a href="https://service.weibo.com/share/share.php?url=https://academic-demo.netlify.app/posts/writing-technical-content/&amp;title=Writing%20technical%20content%20in%20Academic" target="_blank" rel="noopener" class="share-btn-weibo"><i class="fab fa-weibo"></i></a></li></ul></div>
-
-<div class="media author-card content-widget-hr"><img class="avatar mr-3 avatar-circle" src="/assets/img/person.jpg" alt="Nelson Bighetti"><div class="media-body"><h5 class="card-title"><a href="https://academic-demo.netlify.app">Nelson Bighetti</a></h5><h6 class="card-subtitle">Professor of Artificial Intelligence</h6><p class="card-text">My research interests include distributed robotics, mobile computing and programmable matter.</p><ul class="network-icon" aria-hidden="true"><li><a href="/#contact"><i class="fas fa-envelope"></i></a></li><li><a href="https://twitter.com/GeorgeCushen" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a></li><li><a href="https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ" target="_blank" rel="noopener"><i class="fas fa-graduation-cap"></i></a></li><li><a href="https://github.com/gcushen" target="_blank" rel="noopener"><i class="fab fa-github"></i></a></li><li><a href="https://www.linkedin.com/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a></li></ul></div></div>
-
-  </div> <!--article container -->
-</article>
-~~~
