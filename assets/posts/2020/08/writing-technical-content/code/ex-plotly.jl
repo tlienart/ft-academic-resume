@@ -9,6 +9,6 @@ z =  [10     10.625  12.5  15.625  20
 data   = PlotlyJS.contour(; z=z)
 layout = PlotlyJS.Layout()
 plot   = PlotlyJS.plot(data, layout)
-jplot  = PlotlyJS.json(plot)
+jplot  = PlotlyJS.json(plot) # hide
 
 fdplotly(jplot) # hide

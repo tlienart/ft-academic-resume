@@ -39,6 +39,9 @@
 <link rel=stylesheet href="/ft-academic-resume/css/extra.css">
 
 <!-- highlight + katex + plotly -->
+<link rel=stylesheet href="/ft-academic-resume/libs/highlight/github.min.css">
+
+  <link rel="stylesheet" href="/ft-academic-resume/libs/katex/katex.min.css">
 
 
 
@@ -47,7 +50,7 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin=anonymous async></script>
 
-   <title>Blog</title>  
+   <title>Using Literate</title>  
 </head>
 
 <body id=top data-spy="scroll" data-offset="70" data-target=#navbar-main>
@@ -84,51 +87,42 @@
   
     <article class=article>
       <div class="article-container pt-3">
-        <h1>Blog</h1>
+        <h1>Using Literate</h1>
       </div>
       
 
       <div class="article-container">
         <div class="article-style">
   
-<div class="franklin-content"><section id="blog" class="home-section ">
-  <div class="container">
-    <div class="row "></p>
-<div class="col-12 col-lg-4"><h1>2020</h1></div>
-<div class="col-12 col-lg-8">
-<div class="media stream-item">
-  <div class=media-body>
-    <h3 class="article-title mb-0 mt-0"><a href="/ft-academic-resume/posts/2020/08/writing-technical-content">Writing Technical Content</a></h3>
-    <a href="/ft-academic-resume/posts/2020/08/writing-technical-content" class=summary-link>
-      <div class=article-style>Academic is designed to give technical content creators a seamless experience. You can focus on the content and Academic handles the rest. Highlight your code snippets, take notes on math classes, and draw diagrams from textual representation.
-</div>
-    </a>
-    <div class="stream-meta article-metadata">
-      <div class=article-metadata><span class=article-date>Published on Aug 5, 2020.</span>
-      </div>
-    </div>
-  </div>
-  <div class=ml-3>
-    <a href="/ft-academic-resume/posts/2020/08/writing-technical-content"><img src="/ft-academic-resume/assets/img/post1.jpg" alt="Writing Technical Content"></a>
-  </div>
-</div><div class="media stream-item">
-  <div class=media-body>
-    <h3 class="article-title mb-0 mt-0"><a href="/ft-academic-resume/posts/2020/07/literate">Using Literate</a></h3>
-    <a href="/ft-academic-resume/posts/2020/07/literate" class=summary-link>
-      <div class=article-style></div>
-    </a>
-    <div class="stream-meta article-metadata">
-      <div class=article-metadata><span class=article-date>Published on Jul 10, 2020.</span>
-      </div>
-    </div>
-  </div>
-  <div class=ml-3>
-    <a href="/ft-academic-resume/posts/2020/07/literate"><img src="assets/img/post2.jpg" alt="Using Literate"></a>
-  </div>
-</div>
-<p>    </div>
-  </div>
-</section>
+<div class="franklin-content">
+<p><a href="https://github.com/fredrikekre/Literate.jl">Literate.jl</a> is a convenient package that allows you to write scripts in Julia and convert them to markdown pages or Jupyter notebooks. They work seamlessly with Franklin; for instance here the rest of the page is included from <code>_literate/example1.jl</code>, written in Literate format and included using</p>
+<pre><code class="language-plaintext">\literate&#123;example1.jl&#125;</code></pre>
+<p>&#40;Any relative path given to <code>\literate</code> that doesn&#39;t start with <code>/</code> is assumed to correspond to a file in the <code>_literate</code> folder.&#41;</p>
+<h2 id="literate_part"><a href="#literate_part">Literate part</a></h2>
+<p>Head to the <a href="https://github.com/fredrikekre/Literate.jl">Literate.jl</a> repo for more information about the syntax but, overall, it&#39;s about writing a Julia script with lots of comments.</p>
+<p>You can also convert a Jupyter notebook into a <code>.jl</code> script using Literate and include that with Franklin to get a webpage that reproduces the notebook.</p>
+<p>Julia code blocks will be executed and their output shown &#40;unless you add a <code>;</code> at the end of the last line of the code block.</p>
+<p>Let&#39;s start with something very simple</p>
+<pre><code class="language-julia">x &#61; 5</code></pre><pre><code class="plaintext">5</code></pre>
+<p>And we can keep going with simple things</p>
+<pre><code class="language-julia">foreach&#40;println, &#40;&#39;*&#39;^i for i in 1:x&#41;&#41;</code></pre><pre><code class="plaintext">*
+**
+***
+****
+*****
+</code></pre>
+<p>You can use packages of course, just make sure your website folder has a <code>Project.toml</code> with all your dependencies listed; also if you use the GitHub deployment path, you will need to make sure the deploy script installs the right package &#40;head to the <a href="https://franklinjl.org">docs</a> for more information&#41;.</p>
+<pre><code class="language-julia">using PyPlot
+
+figure&#40;figsize&#61;&#40;8, 6&#41;&#41;
+x &#61; range&#40;0, 10, length&#61;250&#41;
+y &#61; @. sin&#40;3x&#41; * exp&#40;-x/5&#41; &#43; log&#40;x&#41; * cos&#40;x&#41; / 10
+plot&#40;x, y&#41;</code></pre>
+<p>in the comments the markdown is treated as Franklin markdown so you can do things like include images inside div blocks etc:</p>
+<div class="small-img"><img src="/ft-academic-resume/assets/posts/2020/07/literate/code/output/example1.svg" alt="Simple example"></div>
+<p>And include maths of course</p>
+\[ \exp(i\pi) + 1 = 0 \]
+
 
 </div> <!-- article style -->
 
@@ -153,8 +147,13 @@
 
 
 <!-- CONTENT ENDS HERE -->
-    
-    
+     <script src="/ft-academic-resume/libs/katex/katex.min.js"></script>
+<script src="/ft-academic-resume/libs/katex/auto-render.min.js"></script>
+<script>renderMathInElement(document.body)</script>
+     
+     <script src="/ft-academic-resume/libs/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();hljs.configure({tabReplace: '    '});</script>
+ 
 
   <script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin=anonymous></script>
 

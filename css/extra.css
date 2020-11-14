@@ -8,7 +8,7 @@ body { counter-reset: eqnum; }
 .katex { font-size: 1em !important; }
 
 .katex-display .katex {
-    display: inline-block; } /* overwrite katex settings */
+    display: inline-block !important; } /* overwrite katex settings */
 
 .katex-display::after {
     counter-increment: eqnum;
@@ -16,6 +16,8 @@ body { counter-reset: eqnum; }
     position: relative;
     float: right;
     padding-right: 5px; }
+
+.katex { font-size: 1em !important; }
 
 /* ==================================================================
     CODE & HIGHLIGHT.JS for meta (shell>, pkg>, ...)
@@ -32,6 +34,8 @@ body { counter-reset: eqnum; }
 
 .small-img img {
     width: 70%;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .small-ctr {

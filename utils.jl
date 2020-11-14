@@ -242,7 +242,7 @@ function show_posts(posts; byyear=false)
             imgpath = ""
         else
             if imgpath[1] != '/'
-                imgpath = "/$imgpath"
+                imgpath = "$imgpath"
             end
         end
         write(io, """
