@@ -193,18 +193,37 @@ end
 # List of recent posts #
 # -------------------- #
 
+# Set global variable `dateformat` to `"post"`, `"yearmonth"`, or `"year"`
+# The expected file structures are
+# - `"yearmonth"`: posts/YYYY/MM/name-of-post.md
+# - `"year"`: posts/YYYY/name-of-post.md
+# - `"post"`: posts/name-of-post.md
+
 function all_posts()
-    # expected file structure here is posts/YYYY/MM/name-of-post.md
     posts = Pair{String,Date}[]
+    dateformat = globvar("dateformat"; default="yearmonth")
     for (root, _, files) in walkdir(joinpath(Franklin.FOLDER_PATH[], "posts"))
         for file in files
             endswith(file, ".md") || continue
             ppath = joinpath(root, file)
             endswith(ppath, joinpath("posts", "index.md")) && continue
-            tmp, fn = splitdir(ppath)
-            tmp, mm = splitdir(tmp)
-            tmp, yy = splitdir(tmp)
-            rpath = joinpath("posts", yy, mm, splitext(fn)[1])
+            spath = splitpath(ppath)
+            post = first(splitext(pop!(spath)))
+            if dateformat == "yearmonth"
+                mm = pop!(spath)
+                yy = pop!(spath)
+                rpath = joinpath("posts", yy, mm, post)
+            elseif dateformat == "year"
+                mm = "01"
+                yy = pop!(spath)
+                rpath = joinpath("posts", yy, post)
+            elseif dateformat == "post"
+                mm = yy = "01"
+                rpath = joinpath("posts", post)
+            else
+                error("Dateformat $dateformat not supported, use 'post', 'year', or 'yearmonth'")
+            end
+            
             date = pagevar(rpath, "pubdate")
             isnothing(date) && (date = Date("$yy-$mm-01"))
             push!(posts, rpath => date)
