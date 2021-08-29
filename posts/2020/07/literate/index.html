@@ -98,14 +98,14 @@
 <p><a href="https://github.com/fredrikekre/Literate.jl">Literate.jl</a> is a convenient package that allows you to write scripts in Julia and convert them to markdown pages or Jupyter notebooks. They work seamlessly with Franklin; for instance here the rest of the page is included from <code>_literate/example1.jl</code>, written in Literate format and included using</p>
 <pre><code class="language-plaintext">\literate&#123;example1.jl&#125;</code></pre>
 <p>&#40;Any relative path given to <code>\literate</code> that doesn&#39;t start with <code>/</code> is assumed to correspond to a file in the <code>_literate</code> folder.&#41;</p>
-<h2 id="literate_part"><a href="#literate_part">Literate part</a></h2>
+<h2 id="literate_part"><a href="#literate_part" class="header-anchor">Literate part</a></h2>
 <p>Head to the <a href="https://github.com/fredrikekre/Literate.jl">Literate.jl</a> repo for more information about the syntax but, overall, it&#39;s about writing a Julia script with lots of comments.</p>
 <p>You can also convert a Jupyter notebook into a <code>.jl</code> script using Literate and include that with Franklin to get a webpage that reproduces the notebook.</p>
 <p>Julia code blocks will be executed and their output shown &#40;unless you add a <code>;</code> at the end of the last line of the code block.</p>
 <p>Let&#39;s start with something very simple</p>
-<pre><code class="language-julia">x &#61; 5</code></pre><pre><code class="plaintext">5</code></pre>
+<pre><code class="language-julia">x &#61; 5</code></pre><pre><code class="plaintext code-output">5</code></pre>
 <p>And we can keep going with simple things</p>
-<pre><code class="language-julia">foreach&#40;println, &#40;&#39;*&#39;^i for i in 1:x&#41;&#41;</code></pre><pre><code class="plaintext">*
+<pre><code class="language-julia">foreach&#40;println, &#40;&#39;*&#39;^i for i in 1:x&#41;&#41;</code></pre><pre><code class="plaintext code-output">*
 **
 ***
 ****

@@ -1,17 +1,42 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-<channel>
-  <title>Franklin Template</title>
-  <description><![CDATA[Example website using Franklin
-]]></description>
-  <link>https://tlienart.github.io/FranklinTemplates.jl/</link>
-  <atom:link href="https://tlienart.github.io/FranklinTemplates.jl/feed.xml" rel="self" type="application/rss+xml" />
-  <item>
-    <title>Writing Technical Content</title>
-    <link>https://tlienart.github.io/FranklinTemplates.jl/posts/2020/08/writing-technical-content/</link>
-    <description><![CDATA[Academic is designed to give technical content creators a seamless experience. You can focus on the content and Academic handles the rest. Highlight your code snippets, take notes on math classes, and draw diagrams from textual representation.
-<br><a href="https://tlienart.github.io/FranklinTemplates.jl/posts/2020/08/writing-technical-content/">Read more</a>]]></description>
-    <guid>https://tlienart.github.io/FranklinTemplates.jl/posts/2020/08/writing-technical-content/</guid>
-    <pubDate>Sat, 14 Nov 2020 00:00:00 UT</pubDate>
-  </item>
-</channel>
-</rss>
+<?xml version="1.0" encoding="UTF-8"?>
+
+<rss version="2.0"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:media="http://search.yahoo.com/mrss/"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:georss="http://www.georss.org/georss">
+
+  <channel>
+    <title>
+      <![CDATA[  Franklin Template  ]]>
+    </title>
+    <link> https://tlienart.github.io/FranklinTemplates.jl/ </link>
+    <description>
+      <![CDATA[  Example website using Franklin  ]]>
+    </description>
+    <atom:link
+      href="https://tlienart.github.io/FranklinTemplates.jl/feed.xml"
+      rel="self"
+      type="application/rss+xml" />
+
+
+<item>
+  <title>
+    <![CDATA[  Writing Technical Content  ]]>
+  </title>
+  <link> https://tlienart.github.io/FranklinTemplates.jl/posts/2020/08/writing-technical-content/index.html </link>
+  <guid> https://tlienart.github.io/FranklinTemplates.jl/posts/2020/08/writing-technical-content/index.html </guid>
+  <description>
+    <![CDATA[  Academic is designed to give technical content creators a seamless experience. You can focus on the content and Academic handles the rest. Highlight your code snippets, take notes on math classes, and draw diagrams from textual representation.  ]]>
+  </description>  
+    
+  <pubDate>Sun, 29 Aug 2021 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>Nelson Bighetti</atom:name>
+  </atom:author>
+        
+</item>
+</channel></rss>
