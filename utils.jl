@@ -277,7 +277,7 @@ function show_posts(posts; byyear=false)
                 </div>
               </div>
               <div class=ml-3>
-                <a href="/$rpath"><img src="$imgpath" alt="$title"></a>
+              $(ifelse(isempty(imgpath), "", """<a href="/$rpath"><img src="$imgpath" alt="$title"></a>"""))
               </div>
             </div>""")
     end
