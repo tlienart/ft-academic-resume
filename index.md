@@ -87,6 +87,7 @@
   company="University X",
   from="Jan 2016",
   to="Dec 2016",
+  last=true,
   location="California",
   descr="Taught electronic engineering and researched semiconductor physics."
   }
