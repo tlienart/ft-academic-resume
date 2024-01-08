@@ -1,8 +1,18 @@
 using FranklinUtils
+using TOML
 
 # ----------------------------------- #
 # Academic blocks // General elements #
 # ----------------------------------- #
+
+@env function itemspage(md; name="", class="")
+  id = Franklin.refstring(name)
+  return html("""
+      <section id=\"$id\" class=\"$class\">
+        <div class="container">""") * md * html("""
+        </div>
+      </section>""")
+end
 
 @env function section(md; name="", class="wg-$name",rowclass="")
     id = Franklin.refstring(name)
@@ -295,6 +305,75 @@ function hfun_allposts()
     return show_posts(all_posts(), byyear=true)
 end
 
+
+# I'm trying to make a general function for posts
+# This can then be used for:
+#    - blog posts
+#    - publications
+#    - talks
+
+function all_items()
+  tomlPath = joinpath(Franklin.FOLDER_PATH[], "research/talks.toml")
+
+  toml = TOML.parsefile(tomlPath)
+
+  posts = [i[2] for i in toml]
+
+  # sort by chron order, most recent first
+  return sort(posts, by=(e->e["date"]), rev=true)
+end
+
+function show_items(items; byyear=false)
+  isempty(items) && return ""
+  
+  io      = IOBuffer()
+  curyear = year(items[1]["date"])
+
+  byyear && write(io, "~~~\n<h2>$(curyear)</h2>\n~~~\n")
+
+  for item in items
+    if byyear && year(item["date"]) < curyear
+      curyear = year(item["date"])
+      # write(io, "## $(curyear)\n")
+      write(io, "~~~\n<h2>$(curyear)</h2>\n~~~\n")
+    end
+
+    title = item["title"]
+    date  = item["date"]
+
+    # bullet = "~~~<p>$(title)<br>"
+    bullet = "~~~<p>"
+
+    haskey(item, "url") ?
+    bullet *= "<a href=\"$(item["url"])\"> $(title) </a><br>" :
+    bullet *= "$(title)<br>"
+
+    haskey(item, "authors") ? 
+    bullet *= "<small>$(item["authors"])</small><br>" : nothing
+
+    haskey(item, "venue") ? 
+    bullet *= "<small><i>$(item["venue"])</i></small>" : nothing
+
+    haskey(item, "url") ? url = item["url"] : url = ""
+
+    bullet *= "</p>~~~"
+
+    write(io, "- $(bullet)\n")
+  end
+
+  return Franklin.fd2html(String(take!(io)), internal=true)
+end
+
+function hfun_recentitems(params)
+  n = parse(Int, params[1])
+  allposts = all_items()
+  posts = allposts[1:min(n, length(allposts))]
+  return show_items(posts)
+end
+
+function hfun_allitems()
+  return show_items(all_items(), byyear=true)
+end
 
 # --------------------------------- #
 # Working with Javascript Libraries #

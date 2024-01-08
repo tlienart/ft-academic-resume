@@ -1,0 +1,18 @@
+[blank]
+date = 2050-01-01
+title = "title"
+venue = "venue"
+url = "talks/example"
+
+[myFirstTalk]
+date = 2020-07-10
+title = "Coping with COVID Lockdowns: Baking Bread"
+venue = "Virtual"
+url = "../posts/2020/08/writing-technical-content"
+
+[mySecondTalk]
+date = 2020-12-05
+title = "Defeated by the Lockdown: Crying and Sleeping"
+venue = "My Bed"
+authors = "Nelson Bighetti, Jane Doe"
+url = "https://ipfs.io/ipfs/QmfCGaZe8PtjAoTpjFsEu97nKLWHUQBSJCZ63ZD8qQkJGQ"
