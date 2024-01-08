@@ -5,9 +5,10 @@ using TOML
 # Academic blocks // General elements #
 # ----------------------------------- #
 
-@env function itemspage(md; name="", class="")
+@env function itemslist(md; name="", class="")
   id = Franklin.refstring(name)
   return html("""
+      <h1>$(name)</h1>
       <section id=\"$id\" class=\"$class\">
         <div class="container">""") * md * html("""
         </div>
@@ -312,8 +313,8 @@ end
 #    - publications
 #    - talks
 
-function all_items()
-  tomlPath = joinpath(Franklin.FOLDER_PATH[], "research/talks.toml")
+function all_items(ref)
+  tomlPath = joinpath(Franklin.FOLDER_PATH[], ref)
 
   toml = TOML.parsefile(tomlPath)
 
@@ -354,6 +355,9 @@ function show_items(items; byyear=false)
     haskey(item, "venue") ? 
     bullet *= "<small><i>$(item["venue"])</i></small>" : nothing
 
+    haskey(item, "journal") ? 
+    bullet *= "<small><i>$(item["journal"])</i></small>" : nothing
+
     haskey(item, "url") ? url = item["url"] : url = ""
 
     bullet *= "</p>~~~"
@@ -371,8 +375,9 @@ function hfun_recentitems(params)
   return show_items(posts)
 end
 
-function hfun_allitems()
-  return show_items(all_items(), byyear=true)
+function hfun_allitems(args)
+  ref = args[1]
+  return show_items(all_items(ref), byyear=true)
 end
 
 # --------------------------------- #
