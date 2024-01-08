@@ -1,7 +1,5 @@
 @def title = "Research"
 
-\toc
-
 \begin{itemslist}{name="Talks", class=""}
 
 {{allitems research/talks.toml}}

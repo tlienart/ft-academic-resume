@@ -307,11 +307,11 @@ function hfun_allposts()
 end
 
 
-# I'm trying to make a general function for posts
-# This can then be used for:
-#    - blog posts
-#    - publications
-#    - talks
+# This is a more generalized format for the above functions
+# Can be used for:
+#   - Talks
+#   - Posters
+#   - Publications
 
 function all_items(ref)
   tomlPath = joinpath(Franklin.FOLDER_PATH[], ref)
@@ -335,14 +335,11 @@ function show_items(items; byyear=false)
   for item in items
     if byyear && year(item["date"]) < curyear
       curyear = year(item["date"])
-      # write(io, "## $(curyear)\n")
       write(io, "~~~\n<h2>$(curyear)</h2>\n~~~\n")
     end
 
-    title = item["title"]
-    date  = item["date"]
-
-    # bullet = "~~~<p>$(title)<br>"
+    title  = item["title"]
+    date   = item["date"]
     bullet = "~~~<p>"
 
     haskey(item, "url") ?
